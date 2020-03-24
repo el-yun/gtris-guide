@@ -4,7 +4,52 @@
       <div class="side-nav">
         <ul>
           <li class="nav-item">
+            <a>Global</a>
+            <div class="nav-group">
+              <!-- <p class="nav-group__title"></p> -->
+              <ul class="sub-nav">
+                <li class="nav-item">
+                  <router-link to="/">(Color)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Scrollbar)</router-link>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
             <a>Component</a>
+            <div class="nav-group">
+              <!-- <p class="nav-group__title"></p> -->
+              <ul class="sub-nav">
+                <li class="nav-item">
+                  <router-link to="/component/collapse">Collapse</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Badge)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Pagination)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Modal)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Tooltip)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Loading)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Alert/Toast)</router-link>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a>Form</a>
             <div class="nav-group">
               <!-- <p class="nav-group__title"></p> -->
               <ul class="sub-nav">
@@ -12,7 +57,16 @@
                   <router-link to="/component/button">Button</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link to="/component/collapse">Collapse</router-link>
+                  <router-link to="/">(Checkbox)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Radio)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Input/Textarea)</router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link to="/">(Dropdown/Select)</router-link>
                 </li>
               </ul>
             </div>
