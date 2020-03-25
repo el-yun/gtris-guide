@@ -16,6 +16,7 @@ module.exports = {
                     @import "@/assets/scss/mixins/_truncate.scss";
                 `
             }
-        }
+        },
+        sourceMap: true
     }
 };
