@@ -42,6 +42,13 @@ const routes = [
         meta: {
           title: "Gtris v3 Component-Collapse"
         }
+      },
+      {
+        path: "tooltip",
+        component: () => import("../components/Tooltip.vue"),
+        meta: {
+          title: "Gtris v3 Component-Tooltip"
+        }
       }
     ]
   }

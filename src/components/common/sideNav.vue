@@ -36,7 +36,7 @@
                   <router-link to="/">(Modal)</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link to="/">(Tooltip)</router-link>
+                  <router-link to="/component/tooltip">Tooltip</router-link>
                 </li>
                 <li class="nav-item">
                   <router-link to="/">(Loading)</router-link>
