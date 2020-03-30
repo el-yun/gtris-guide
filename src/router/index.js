@@ -31,6 +31,7 @@ const routes = [
       },
       {
         path: "button",
+        name:'Button',
         component: () => import("../components/Button.vue"),
         meta: {
           title: "Gtris v3 Component-button"
@@ -38,6 +39,7 @@ const routes = [
       },
       {
         path: "collapse",
+        name: 'Collapse',
         component: () => import("../components/Collapse.vue"),
         meta: {
           title: "Gtris v3 Component-Collapse"
@@ -45,6 +47,7 @@ const routes = [
       },
       {
         path: "tooltip",
+        name: 'Tooltip',
         component: () => import("../components/Tooltip.vue"),
         meta: {
           title: "Gtris v3 Component-Tooltip"
