@@ -20,30 +20,11 @@
 
           <li class="nav-item">
             <a>Component</a>
-            <div class="nav-group">
-              <!-- <p class="nav-group__title"></p> -->
+            <div class="nav-group">              
               <ul class="sub-nav">
-                <li class="nav-item">
-                  <router-link to="/component/collapse">Collapse</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Badge)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Pagination)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Modal)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/component/tooltip">Tooltip</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Loading)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Alert/Toast)</router-link>
-                </li>
+                <li class="nav-item" v-for="item in componentMenu" :key="item.name">
+                  <router-link :to="item.link" :class="{'current':$_getCurrnet(item.name)}">{{item.name}}</router-link>
+                </li>                
               </ul>
             </div>
           </li>
@@ -76,6 +57,31 @@
     </div>
   </div>
 </template>
+
+<script>
+
+export default {
+  name: "sidebar",
+  data() {
+    return {
+      componentMenu :[
+        {name: 'Collapse' , link : '/component/collapse' },
+        {name: '(Badge)' , link : '/' },
+        {name: '(Pagination)' , link : '/' },
+        {name: '(Modal)' , link : '/' },
+        {name: 'Tooltip' , link : '/component/tooltip' },
+        {name: '(Loading)' , link : '/' },
+        {name: '(Alert/Toast)' , link : '/' }
+      ]
+    }
+  },
+  methods:{
+    $_getCurrnet(name){console.log(name)
+      return ( this.$route.name == name ) ? true : false
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .component-contents {
@@ -124,8 +130,14 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        font-weight: 400;
+        font-weight: 400;        
+
+        &.current {
+          font-weight: bold;
+          color:#2f90d5;
+        }         
       }
+   
     }
   }
 }
