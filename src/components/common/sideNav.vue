@@ -31,24 +31,11 @@
 
           <li class="nav-item">
             <a>Form</a>
-            <div class="nav-group">
-              <!-- <p class="nav-group__title"></p> -->
+            <div class="nav-group">              
               <ul class="sub-nav">
-                <li class="nav-item">
-                  <router-link to="/component/button">Button</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Checkbox)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Radio)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Input/Textarea)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Dropdown/Select)</router-link>
-                </li>
+                <li class="nav-item" v-for="item in formMenu" :key="item.name">
+                  <router-link :to="item.link" :class="{'current':$_getCurrnet(item.name)}">{{item.name}}</router-link>
+                </li> 
               </ul>
             </div>
           </li>
@@ -72,11 +59,18 @@ export default {
         {name: 'Tooltip' , link : '/component/tooltip' },
         {name: '(Loading)' , link : '/' },
         {name: '(Alert/Toast)' , link : '/' }
+      ],
+      formMenu:[
+        {name: 'Button' , link : '/component/button' },
+        {name: 'Input/Textarea' , link : '/component/input' },
+        {name: '(Checkbox)' , link : '/' },
+        {name: '(Radio)' , link : '/' },
+        {name: '(Dropdown/Select)' , link : '/' }
       ]
     }
   },
   methods:{
-    $_getCurrnet(name){console.log(name)
+    $_getCurrnet(name){
       return ( this.$route.name == name ) ? true : false
     }
   }

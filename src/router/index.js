@@ -34,7 +34,7 @@ const routes = [
         name:'Button',
         component: () => import("../components/Button.vue"),
         meta: {
-          title: "Gtris v3 Component-button"
+          title: "Gtris v3 Form-button"
         }
       },
       {
@@ -52,7 +52,15 @@ const routes = [
         meta: {
           title: "Gtris v3 Component-Tooltip"
         }
-      }
+      },
+      {
+        path: "input",
+        name: 'Input/Textarea',
+        component: () => import("../components/Input.vue"),
+        meta: {
+          title: "Gtris v3 Form-Input"
+        }
+      }      
     ]
   }
 ];
