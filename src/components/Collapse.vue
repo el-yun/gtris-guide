@@ -5,9 +5,9 @@
     <p class="contents-header-desc">Collapse user guide</p>
     </header>
 
-    <!-- Basic -->
     <div class="body-components">
       <h2 class="group-title">Example</h2>
+      <!-- Basic -->
       <div class="group">
         <gt-panel>
           <template #title>Basic</template>
