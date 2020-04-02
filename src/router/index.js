@@ -54,6 +54,14 @@ const routes = [
         }
       },
       {
+        path: "toast",
+        name: 'Toast',
+        component: () => import("../components/Toast.vue"),
+        meta: {
+          title: "Gtris v3 Component-Toast"
+        }
+      },        
+      {
         path: "input",
         name: 'Input/Textarea',
         component: () => import("../components/Input.vue"),
