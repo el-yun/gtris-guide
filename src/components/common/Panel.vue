@@ -22,90 +22,57 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .gt-panel {
-    margin: 30px 0 20px;
-    border-radius: 3px;
-    border: 1px solid #e7e7e7;
-    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  margin: 30px 0 20px;
+  border-radius: 3px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
     
-    .gt-panel-header {
-        height: 38px;
-        padding: 0;
-        border-top: 1px solid #eaeae9;
-        border-bottom: 1px solid #dfdfde;
-        background: #ebebeb;
+  .gt-panel-header {
+    height: 38px;
+    padding: 0;
+    border-top: 1px solid #eaeae9;
+    border-bottom: 1px solid #dfdfde;
+    background: #ebebeb;
 
-        .circles {
-            margin: 4px 10px;
+    .circles {
+      margin: 4px 10px;
 
-            .circle {
-                display: inline-block;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background-color: #fff;
-                border: 1px solid #fff;
-                margin-right: 5px;
-                &.circle-red {
-                    background-color: #fc615c;
-                    border-color: #fd504a;
-                }
-                &.circle-yellow {
-                    background-color: #fec041;
-                    border-color: #f0b542;
-                }
-                &.circle-green {
-                    background-color: #33c849;
-                    border-color: #1bc634;
-                }
-            }
-        }        
-    }
+      .circle {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid #fff;
+        margin-right: 5px;
+        &.circle-red {
+          background-color: #fc615c;
+          border-color: #fd504a;
+        }
+        &.circle-yellow {
+          background-color: #fec041;
+          border-color: #f0b542;
+        }
+        &.circle-green {
+          background-color: #33c849;
+          border-color: #1bc634;
+        }
+      }
+    }        
+  }
 }
 
 .gt-panel-title {
-  font-size: 18px;
-  margin: 20px 0;
-  line-height: 44px;
+  font-size: 20px;
+  margin-top: 50px;
   &:before {
     display: inline-block;
     content: '#';
     color: #999;
-    margin-right: 10px;
+    margin-right: 5px;
     font-weight: lighter;
   }
-}
-
-.gist {
-    font-size: 16px;
-    color: #333;
-    text-align: left;
-    direction: ltr;
-
-    .gist-code {
-        margin-bottom: 1em;
-        border: 1px solid;
-        border-color: #ddd #ddd #ccc;
-        border-radius: 3px;
-
-        .gist-data {
-            overflow: auto;
-            word-wrap: normal;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            border-radius: 3px 3px 0 0;
-
-            textarea {
-                width: 100%;
-                overflow: hidden;
-                height: 100px;
-                padding: 10px;
-                &:disabled {
-                    background: #fff;
-                }
-            }
-        }
-    }
 }
 </style>
