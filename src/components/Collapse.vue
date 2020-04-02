@@ -6,7 +6,7 @@
     </header>
 
     <div class="body-components">
-      <h2 class="group-title">Example</h2>
+      <h2 class="group-title">Usage</h2>
       <!-- Basic -->
       <div class="group">
         <gt-panel>
@@ -84,7 +84,7 @@
         <prism-editor :code="code_accordion" :readonly="true" language="html"></prism-editor>
       </div>
 
-      <h2 class="group-title">Usage</h2>
+      <h2 class="group-title">Props</h2>
       <div class="group">
       </div>
     </div>
@@ -150,28 +150,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  header {
-    font-weight: 400;
-    color: #1f2f3d;
-    font-size: 1.725rem;
-    margin: 0;
-  }
-  .contents-header-desc {
-    font-size: 0.875rem;
-    color: #5e6d82;
-    line-height: 24px;
-    margin: 15px 0px;
-  }
 
-  .group-title {
-    font-weight: normal;
-    font-size: 26px;
-    margin-top: 65px;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    line-height: 44px;
-    border-bottom: 1px solid #ddd;
-  }
-}
 </style>
