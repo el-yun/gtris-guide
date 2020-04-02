@@ -58,7 +58,7 @@ export default {
         {name: '(Modal)' , link : '/' },
         {name: 'Tooltip' , link : '/component/tooltip' },
         {name: '(Loading)' , link : '/' },
-        {name: '(Alert/Toast)' , link : '/' }
+        {name: 'Toast' , link : '/component/toast' }
       ],
       formMenu:[
         {name: 'Button' , link : '/component/button' },
