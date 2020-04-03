@@ -122,6 +122,11 @@
               <td>Function</td>
               <td>null</td>
             </tr>
+            <tr>
+              <td>customClass</td>
+              <td>String</td>
+              <td>null</td>
+            </tr>
           </tbody>
         </table>
       </div>
