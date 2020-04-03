@@ -24,7 +24,7 @@
             </gt-collapse>
           </template>
         </gt-panel>
-        <prism-editor :code="code_basic" :readonly="true" language="html"></prism-editor>
+        <prism-editor :lineNumbers="true" :code="code_basic" :readonly="true" language="html"></prism-editor>
       </div>
       <!-- Activate -->
       <div class="group">
@@ -43,7 +43,7 @@
             </gt-collapse>
           </template>
         </gt-panel>
-        <prism-editor :code="code_activate" :readonly="true" language="html"></prism-editor>
+        <prism-editor :lineNumbers="true" :code="code_activate" :readonly="true" language="html"></prism-editor>
       </div>
       <!-- Accordion  -->
       <div class="group">
@@ -62,7 +62,7 @@
             </gt-collapse>
           </template>
         </gt-panel>
-        <prism-editor :code="code_accordion" :readonly="true" language="html"></prism-editor>
+        <prism-editor :lineNumbers="true" :code="code_accordion" :readonly="true" language="html"></prism-editor>
       </div>
       <!-- Event  -->
       <div class="group">
@@ -81,7 +81,7 @@
             </gt-collapse>
           </template>
         </gt-panel>
-        <prism-editor :code="code_accordion" :readonly="true" language="html"></prism-editor>
+        <prism-editor :lineNumbers="true" :code="code_accordion" :readonly="true" language="html"></prism-editor>
       </div>
 
       <h2 class="group-title">Props</h2>
