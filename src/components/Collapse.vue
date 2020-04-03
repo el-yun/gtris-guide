@@ -84,6 +84,57 @@
         <prism-editor :lineNumbers="true" :code="code_accordion" :readonly="true" language="html"></prism-editor>
       </div>
 
+      <!-- Nestsed -->
+      <div class="group">
+        <gt-panel>
+          <template #title>Nestsed</template>
+          <template #body>
+            <!-- parent collapse -->
+            <gt-collapse>
+              <gt-collapse-item>
+                <template #head>Parent Head 1</template>
+                <template #content>
+                  You can add a child. <br><br>
+                  <!-- child collapse -->
+                  <gt-collapse accordion>
+                    <gt-collapse-item>
+                      <template #head>Child Head 1-1</template>
+                      <template #content>Child Content 1-1</template>
+                    </gt-collapse-item>
+                    <gt-collapse-item>
+                      <template #head>Child Head 1-2</template>
+                      <template #content>Child Content 1-2</template>
+                    </gt-collapse-item>
+                    <gt-collapse-item>
+                      <template #head>Child Head 1-3</template>
+                      <template #content>Child Content 1-3</template>
+                    </gt-collapse-item>
+                  </gt-collapse>
+                </template>
+              </gt-collapse-item>
+              <gt-collapse-item>
+                <template #head>Parent Head 2</template>
+                <template #content>
+                  <!-- child collapse -->
+                  <gt-collapse>
+                    <gt-collapse-item>
+                      <template #head>Child Head 2-1</template>
+                      <template #content>Child Content 2-1</template>
+                    </gt-collapse-item>
+                    <gt-collapse-item>
+                      <template #head>Child Head 2-2</template>
+                      <template #content>Child Content 2-2</template>
+                    </gt-collapse-item>
+                  </gt-collapse>
+                </template>
+              </gt-collapse-item> 
+            </gt-collapse>
+          </template>
+        </gt-panel>
+        <prism-editor :lineNumbers="true" :code="code_nested" :readonly="true" language="html"></prism-editor>
+      </div>
+
+
       <h2 class="group-title">Props</h2>
       <!-- gt-collapse  -->
       <div class="group">
@@ -203,6 +254,46 @@ export default {
     <template #head>head</template>
     <template #content>content2</template>
   </gt-collapse-item>
+</gt-collapse>`,
+      code_nested: `<!-- parent collapse -->
+<gt-collapse>
+  <gt-collapse-item>
+    <template #head>Parent Head 1</template>
+    <template #content>
+      You can add a child. <br><br>
+      <!-- child collapse -->
+      <gt-collapse accordion>
+        <gt-collapse-item>
+          <template #head>Child Head 1-1</template>
+          <template #content>Child Content 1-1</template>
+        </gt-collapse-item>
+        <gt-collapse-item>
+          <template #head>Child Head 1-2</template>
+          <template #content>Child Content 1-2</template>
+        </gt-collapse-item>
+        <gt-collapse-item>
+          <template #head>Child Head 1-3</template>
+          <template #content>Child Content 1-3</template>
+        </gt-collapse-item>
+      </gt-collapse>
+    </template>
+  </gt-collapse-item>
+  <gt-collapse-item>
+    <template #head>Parent Head 2</template>
+    <template #content>
+      <!-- child collapse -->
+      <gt-collapse>
+        <gt-collapse-item>
+          <template #head>Child Head 2-1</template>
+          <template #content>Child Content 2-1</template>
+        </gt-collapse-item>
+        <gt-collapse-item>
+          <template #head>Child Head 2-2</template>
+          <template #content>Child Content 2-2</template>
+        </gt-collapse-item>
+      </gt-collapse>
+    </template>
+  </gt-collapse-item> 
 </gt-collapse>`
     };
   },
