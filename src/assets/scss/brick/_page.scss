@@ -21,4 +21,34 @@ section {
     line-height: 44px;
     border-bottom: 1px solid #ddd;
   }
+
+  .group-sub-title {
+    font-size: 20px;
+    margin-top: 50px;
+    &:before {
+      display: inline-block;
+      content: '#';
+      color: #999;
+      margin-right: 5px;
+      font-weight: lighter;
+    }
+  }
+
+  .group-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    th, td {
+      padding: 1em 0;
+    }
+    th {
+      font-weight: normal;
+      background: #f9f9f9;
+      // border-bottom: 1px solid #d6d6d6;
+    }
+    td {
+      color: #666;   
+      font-weight: lighter;
+    }
+  }
 }

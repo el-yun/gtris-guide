@@ -85,7 +85,70 @@
       </div>
 
       <h2 class="group-title">Props</h2>
+      <!-- gt-collapse  -->
       <div class="group">
+        <p class="group-sub-title">gt-collapse</p>
+        <table class="group-table">
+          <colgroup>
+            <col style="width: 33%">
+            <col style="width: 33%">
+            <col style="width: 34%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>OPTION</th>
+              <th>TYPE</th>
+              <th>DEFAULT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>accordion</td>
+              <td>Boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>init</td>
+              <td>String</td>
+              <td>null</td>
+            </tr>
+            <tr>
+              <td>opened</td>
+              <td>Function</td>
+              <td>null</td>
+            </tr>
+            <tr>
+              <td>closed</td>
+              <td>Function</td>
+              <td>null</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- gt-collapse-item  -->
+      <div class="group">
+        <p class="group-sub-title">gt-collapse-item</p>
+        <table class="group-table">
+          <colgroup>
+            <col style="width: 33%">
+            <col style="width: 33%">
+            <col style="width: 34%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>OPTION</th>
+              <th>TYPE</th>
+              <th>DEFAULT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>name</td>
+              <td>[String, Number]</td>
+              <td>null</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -150,5 +213,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>
