@@ -42,7 +42,14 @@ const routes = [
         meta: {
           title: "Gtris v3 Component-Collapse"
         }
-      }
+      },
+      {
+        path: "pagination",
+        component: () => import("../components/Pagination.vue"),
+        meta: {
+          title: "Gtris v3 Component-button"
+        }
+      },
     ]
   }
 ];

@@ -30,7 +30,7 @@
                   <router-link to="/">(Badge)</router-link>
                 </li>
                 <li class="nav-item">
-                  <router-link to="/">(Pagination)</router-link>
+                  <router-link to="/component/pagination">Pagination</router-link>
                 </li>
                 <li class="nav-item">
                   <router-link to="/">(Modal)</router-link>
