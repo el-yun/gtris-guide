@@ -31,13 +31,15 @@ const routes = [
       },
       {
         path: "button",
+        name: "Button",
         component: () => import("../components/Button.vue"),
         meta: {
-          title: "Gtris v3 Component-button"
+          title: "Gtris v3 Form-button"
         }
       },
       {
         path: "collapse",
+        name: "Collapse",
         component: () => import("../components/Collapse.vue"),
         meta: {
           title: "Gtris v3 Component-Collapse"
@@ -45,11 +47,36 @@ const routes = [
       },
       {
         path: "pagination",
+        name: "Pagination",
         component: () => import("../components/Pagination.vue"),
         meta: {
           title: "Gtris v3 Component-button"
         }
       },
+      {
+        path: "tooltip",
+        name: "Tooltip",
+        component: () => import("../components/Tooltip.vue"),
+        meta: {
+          title: "Gtris v3 Component-Tooltip"
+        }
+      },
+      {
+        path: "toast",
+        name: "Toast",
+        component: () => import("../components/Toast.vue"),
+        meta: {
+          title: "Gtris v3 Component-Toast"
+        }
+      },
+      {
+        path: "input",
+        name: "Input/Textarea",
+        component: () => import("../components/Input.vue"),
+        meta: {
+          title: "Gtris v3 Form-Input"
+        }
+      }
     ]
   }
 ];

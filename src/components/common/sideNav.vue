@@ -21,28 +21,17 @@
           <li class="nav-item">
             <a>Component</a>
             <div class="nav-group">
-              <!-- <p class="nav-group__title"></p> -->
               <ul class="sub-nav">
-                <li class="nav-item">
-                  <router-link to="/component/collapse">Collapse</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Badge)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/component/pagination">Pagination</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Modal)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Tooltip)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Loading)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Alert/Toast)</router-link>
+                <li
+                  class="nav-item"
+                  v-for="item in componentMenu"
+                  :key="item.name"
+                >
+                  <router-link
+                    :to="item.link"
+                    :class="{ current: $_getCurrnet(item.name) }"
+                    >{{ item.name }}</router-link
+                  >
                 </li>
               </ul>
             </div>
@@ -51,22 +40,13 @@
           <li class="nav-item">
             <a>Form</a>
             <div class="nav-group">
-              <!-- <p class="nav-group__title"></p> -->
               <ul class="sub-nav">
-                <li class="nav-item">
-                  <router-link to="/component/button">Button</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Checkbox)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Radio)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Input/Textarea)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Dropdown/Select)</router-link>
+                <li class="nav-item" v-for="item in formMenu" :key="item.name">
+                  <router-link
+                    :to="item.link"
+                    :class="{ current: $_getCurrnet(item.name) }"
+                    >{{ item.name }}</router-link
+                  >
                 </li>
               </ul>
             </div>
@@ -76,6 +56,37 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "sidebar",
+  data() {
+    return {
+      componentMenu: [
+        { name: "Collapse", link: "/component/collapse" },
+        { name: "(Badge)", link: "/" },
+        { name: "Pagination", link: "/component/pagination" },
+        { name: "(Modal)", link: "/" },
+        { name: "Tooltip", link: "/component/tooltip" },
+        { name: "(Loading)", link: "/" },
+        { name: "Toast", link: "/component/toast" }
+      ],
+      formMenu: [
+        { name: "Button", link: "/component/button" },
+        { name: "Input/Textarea", link: "/component/input" },
+        { name: "(Checkbox)", link: "/" },
+        { name: "(Radio)", link: "/" },
+        { name: "(Dropdown/Select)", link: "/" }
+      ]
+    };
+  },
+  methods: {
+    $_getCurrnet(name) {
+      return this.$route.name == name ? true : false;
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .component-contents {
@@ -125,6 +136,11 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         font-weight: 400;
+
+        &.current {
+          font-weight: bold;
+          color: #2f90d5;
+        }
       }
     }
   }

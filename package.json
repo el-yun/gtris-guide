@@ -10,7 +10,9 @@
   "dependencies": {
     "@gtris/vue": "git+https://gm1702759:zKzTTuQkg7unZ-NdrAYM@gitlab.gabia.com/ui/gtris3-vue.git",
     "core-js": "^3.6.4",
+    "prismjs": "^1.19.0",
     "vue": "^2.6.11",
+    "vue-prism-editor": "^0.5.1",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"
   },

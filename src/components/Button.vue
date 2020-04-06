@@ -5,98 +5,67 @@
     </header>
     <p class="contents-header-desc">Button user guide</p>
     <div class="body-components">
-      <!-- preview button tag -->
-      <p class="gt-panel-title">preview</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
-          </div>
-        </div>
-        <div class="gt-panel-body">
-          <gtbutton>버튼(default)</gtbutton>
-          <gtbutton :disabled="true">버튼(disabled)</gtbutton>
-        </div>
+      <h2 class="group-title">Usage</h2>
+      <!-- Basic -->
+      <div class="group">
+        <gt-panel>
+          <template #title>Basic</template>
+          <template #body>
+            <gtbutton>버튼(default)</gtbutton>
+            <gtbutton :disabled="true">버튼(disabled)</gtbutton>
+          </template>
+        </gt-panel>
+        <prism-editor :code="basic_btn_str" :readonly="true" language="html"></prism-editor>
       </div>
-      <div class="gist">
-        <div class="gist-code">
-          <div class="gist-data">
-            <textarea :value="basic_btn_str" disabled style="height: 70px;" />
-          </div>
-        </div>
-      </div>
-      <!-- color button tag -->
-      <p class="gt-panel-title">Colored 버튼</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
-          </div>
-        </div>
-        <div class="gt-panel-body">
-          <gtbutton indicator="primary">버튼(Primary)</gtbutton>
-          <gtbutton indicator="secondary">버튼(Secondary)</gtbutton>
-          <gtbutton indicator="danger">버튼(Danger)</gtbutton>
-          <gtbutton indicator="primary" :disabled="true">
-            버튼(Primary)
-          </gtbutton>
-          <gtbutton indicator="secondary" :disabled="true">
-            버튼(Secondary)
-          </gtbutton>
-          <gtbutton indicator="danger" :disabled="true">
-            버튼(Danger)
-          </gtbutton>
-        </div>
-      </div>
-      <div class="gist">
-        <div class="gist-code">
-          <div class="gist-data">
-            <textarea :value="color_btn_str" disabled />
-          </div>
-        </div>
+      
+      <!-- Colored -->
+      <div class="group">
+        <gt-panel>
+          <template #title>Colored</template>
+          <template #body>
+            <gtbutton indicator="primary">버튼(Primary)</gtbutton>
+            <gtbutton indicator="secondary">버튼(Secondary)</gtbutton>
+            <gtbutton indicator="danger">버튼(Danger)</gtbutton>
+            <gtbutton indicator="primary" :disabled="true">
+              버튼(Primary)
+            </gtbutton>
+            <gtbutton indicator="secondary" :disabled="true">
+              버튼(Secondary)
+            </gtbutton>
+            <gtbutton indicator="danger" :disabled="true">
+              버튼(Danger)
+            </gtbutton>
+          </template>
+        </gt-panel>
+        <prism-editor :code="color_btn_str" :readonly="true" language="html"></prism-editor>
       </div>
 
-      <!--icon button tag -->
-      <p class="gt-panel-title">Colored 버튼</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
-          </div>
-        </div>
-        <div class="gt-panel-body">
-          <gtbutton type="icon" icon="trash" />
-          <gtbutton type="icon" icon="check" />
-          <gtbutton type="icon" icon="heart" />
-          <gtbutton type="icon" icon="cog" />
-          <gtbutton type="icon" icon="label" />
-          <gtbutton type="icon" icon="mail" />
-          <gtbutton type="icon" icon="memo" />
-          <gtbutton type="icon" icon="message" />
-          <gtbutton type="icon" icon="plus" />
-          <gtbutton type="icon" icon="minus" />
-          <gtbutton type="icon" icon="bell" />
-          <gtbutton type="icon" icon="lock" />
-          <gtbutton type="icon" icon="paperclip" />
-          <gtbutton type="icon" icon="search" />
-          <gtbutton type="icon" icon="star" />
-          <gtbutton type="icon" icon="star-cancel" />
-          <gtbutton type="icon" icon="user" />
-          <gtbutton type="icon" icon="print" />
-        </div>
-      </div>
-      <div class="gist">
-        <div class="gist-code">
-          <div class="gist-data">
-            <textarea :value="icon_btn_str" disabled style="height:400px;" />
-          </div>
-        </div>
+      <!-- Icon -->
+      <div class="group">
+        <gt-panel>
+          <template #title>Icon</template>
+          <template #body>
+            <gtbutton type="icon" icon="trash" />
+            <gtbutton type="icon" icon="check" />
+            <gtbutton type="icon" icon="heart" />
+            <gtbutton type="icon" icon="cog" />
+            <gtbutton type="icon" icon="label" />
+            <gtbutton type="icon" icon="mail" />
+            <gtbutton type="icon" icon="memo" />
+            <gtbutton type="icon" icon="message" />
+            <gtbutton type="icon" icon="plus" />
+            <gtbutton type="icon" icon="minus" />
+            <gtbutton type="icon" icon="bell" />
+            <gtbutton type="icon" icon="lock" />
+            <gtbutton type="icon" icon="paperclip" />
+            <gtbutton type="icon" icon="search" />
+            <gtbutton type="icon" icon="star" />
+            <gtbutton type="icon" icon="star-cancel" />
+            <gtbutton type="icon" icon="user" />
+            <gtbutton type="icon" icon="print" />
+          </template>
+        </gt-panel>
+        <prism-editor :code="icon_btn_str" :readonly="true" language="html"></prism-editor>
       </div>
     </div>
   </section>

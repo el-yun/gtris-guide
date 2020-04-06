@@ -1,11 +1,11 @@
-"use strict"
+"use strict";
 
 module.exports = {
-    configureWebpack: {},
-    css: {
-        loaderOptions: {
-            scss: {
-                prependData: `
+  configureWebpack: {},
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `
                     //mixins
                     @import "@/assets/scss/mixins/_breakpoints.scss";
                     @import "@/assets/scss/mixins/_boxshadow.scss";
@@ -15,7 +15,8 @@ module.exports = {
                     @import "@/assets/scss/mixins/_pseudo.scss";
                     @import "@/assets/scss/mixins/_truncate.scss";
                 `
-            }
-        }
-    }
+      }
+    },
+    sourceMap: true
+  }
 };
