@@ -75,13 +75,10 @@
     <div class="body-components">
       <gt-panel>
         <template #title>Pagination(infinite-Scroll) [Derective]</template>
-        <template #gist>
-          <prism-editor
-            :lineNumbers="true"
-            :code="scroll_str"
-            :readonly="true"
-            language="html"
-          ></prism-editor>
+        <template #body>
+          <a href="/component/pagination/preview">
+            <gtbutton>예제보기(새창)</gtbutton>
+          </a>
         </template>
         <template #options>
           <p class="">options</p>
@@ -102,8 +99,8 @@
                 </tr>
                 <tr>
                   <td>infinite-scroll-distance(Number)</td>
-                  <td>이벤트가 발생하는 스크롤 길이</td>
-                  <td>10</td>
+                  <td>최소 스크롤 계산 길이</td>
+                  <td>100</td>
                 </tr>
               </tbody>
             </table>

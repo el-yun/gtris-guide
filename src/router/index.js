@@ -50,7 +50,15 @@ const routes = [
         name: "Pagination",
         component: () => import("../components/Pagination.vue"),
         meta: {
-          title: "Gtris v3 Component-button"
+          title: "Gtris v3 Component-Pagination"
+        }
+      },
+      {
+        path: "pagination/preview",
+        name: "PreviewScroll",
+        component: () => import("../components/PreviewScroll.vue"),
+        meta: {
+          title: "Gtris v3 Component-Pagination-Scroll"
         }
       },
       {
