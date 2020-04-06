@@ -3,114 +3,192 @@
     <header>
       Pagination
     </header>
-    <p class="contents-header-desc">Pagination user guide</p>
+    <p class="contents-header-desc">
+      Basic(Component) / infinite Scroll(Derective)
+    </p>
     <div class="body-components">
-      <!-- preview button tag -->
-      <p class="gt-panel-title">preview</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
+      <!-- Basic -->
+      <gt-panel>
+        <template #title>Pagination(Basic)</template>
+        <template #subtitle>preview</template>
+        <template #body>
+          <gtpagination :length="10" :last_page="40" />
+        </template>
+        <template #gist>
+          <prism-editor
+            :lineNumbers="true"
+            :code="basic_str"
+            :readonly="true"
+            language="html"
+          ></prism-editor>
+        </template>
+        <template #options>
+          <p class="">options</p>
+          <div class="gt-panel-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>이름(타입)</th>
+                  <th>설명</th>
+                  <th>기본값</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>length(Number)</td>
+                  <td>노출할 페이지 번호 수</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>last_page(Number)</td>
+                  <td>마지막 페이지 번호</td>
+                  <td>1</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-        <div class="gt-panel-body">
-          <gtbutton>버튼(default)</gtbutton>
-          <gtbutton :disabled="true">버튼(disabled)</gtbutton>
-        </div>
-      </div>
-      <div class="gist">
-        <div class="gist-code">
-          <div class="gist-data">
-            <textarea :value="basic_btn_str" disabled style="height: 70px;" />
+        </template>
+        <template #events>
+          <p class="">event</p>
+          <div class="gt-panel-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>이벤트 이름</th>
+                  <th>타입</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>value(v-model)</td>
+                  <td>Number</td>
+                  <td>현재 페이지 번호</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-      </div>
-      <!-- color button tag -->
-      <p class="gt-panel-title">Colored 버튼</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
+        </template>
+      </gt-panel>
+      <!-- Basic // -->
+    </div>
+    <div class="body-components">
+      <gt-panel>
+        <template #title>Pagination(infinite-Scroll) [Derective]</template>
+        <template #gist>
+          <prism-editor
+            :lineNumbers="true"
+            :code="scroll_str"
+            :readonly="true"
+            language="html"
+          ></prism-editor>
+        </template>
+        <template #options>
+          <p class="">options</p>
+          <div class="gt-panel-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>이름(타입)</th>
+                  <th>설명</th>
+                  <th>기본값</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>infinite-scroll-disabled(Boolean)</td>
+                  <td>이벤트 지연 플래그 값</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>infinite-scroll-distance(Number)</td>
+                  <td>이벤트가 발생하는 스크롤 길이</td>
+                  <td>10</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-        <div class="gt-panel-body">
-          <gtbutton indicator="primary">버튼(Primary)</gtbutton>
-          <gtbutton indicator="secondary">버튼(Secondary)</gtbutton>
-          <gtbutton indicator="danger">버튼(Danger)</gtbutton>
-          <gtbutton indicator="primary" :disabled="true">
-            버튼(Primary)
-          </gtbutton>
-          <gtbutton indicator="secondary" :disabled="true">
-            버튼(Secondary)
-          </gtbutton>
-          <gtbutton indicator="danger" :disabled="true">
-            버튼(Danger)
-          </gtbutton>
-        </div>
-      </div>
-      <div class="gist">
-        <div class="gist-code">
-          <div class="gist-data">
-            <textarea :value="color_btn_str" disabled />
+        </template>
+        <template #events>
+          <p class="">event</p>
+          <div class="gt-panel-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>이벤트 이름</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>pagination-infinite-scroll</td>
+                  <td>페이징이 확장될 경우 이벤트 발생</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-      </div>
-
-      <!--icon button tag -->
-      <p class="gt-panel-title">Colored 버튼</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
-          </div>
-        </div>
-        <div class="gt-panel-body">
-          <gtbutton type="icon" icon="trash" />
-          <gtbutton type="icon" icon="check" />
-          <gtbutton type="icon" icon="heart" />
-          <gtbutton type="icon" icon="cog" />
-          <gtbutton type="icon" icon="label" />
-          <gtbutton type="icon" icon="mail" />
-          <gtbutton type="icon" icon="memo" />
-          <gtbutton type="icon" icon="message" />
-          <gtbutton type="icon" icon="plus" />
-          <gtbutton type="icon" icon="minus" />
-          <gtbutton type="icon" icon="bell" />
-          <gtbutton type="icon" icon="lock" />
-          <gtbutton type="icon" icon="paperclip" />
-          <gtbutton type="icon" icon="search" />
-          <gtbutton type="icon" icon="star" />
-          <gtbutton type="icon" icon="star-cancel" />
-          <gtbutton type="icon" icon="user" />
-          <gtbutton type="icon" icon="print" />
-        </div>
-      </div>
-      <div class="gist">
-        <div class="gist-code">
-          <div class="gist-data">
-            <textarea :value="icon_btn_str" disabled style="height:400px;" />
-          </div>
-        </div>
-      </div>
+        </template>
+      </gt-panel>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "component-button",
+  name: "component-pagination",
   data() {
     return {
-      basic_btn_str: `<gtbutton>버튼(default)</gtbutton>\n<gtbutton :disabled="true">버튼(disabled)</gtbutton>`,
-      color_btn_str: `<gtbutton indicator="primar">버튼(Primary)</gtbutton>\n<gtbutton indicator="secondary">버튼(Secondary)</gtbutton>\n<gtbutton indicator="danger">버튼(Danger)</gtbutton>`,
-      icon_btn_str: `<gtbutton type="icon" icon="trash" />\n<gtbutton type="icon" icon="check" />\n<gtbutton type="icon" icon="heart" />\n<gtbutton type="icon" icon="cog" />\n<gtbutton type="icon" icon="label" />\n<gtbutton type="icon" icon="mail" />\n<gtbutton type="icon" icon="memo" />\n<gtbutton type="icon" icon="message" />\n<gtbutton type="icon" icon="plus" />\n<gtbutton type="icon" icon="minus" />\n<gtbutton type="icon" icon="bell" />\n<gtbutton type="icon" icon="lock" />\n<gtbutton type="icon" icon="paperclip" />\n<gtbutton type="icon" icon="search" />\n<gtbutton type="icon" icon="star" />\n<gtbutton type="icon" icon="star-cancel" />\n<gtbutton type="icon" icon="user" />\n<gtbutton type="icon" icon="print" />`
+      basic_str: `<gtpagination :length="10" :last_page="40" />`,
+      scroll_str: `
+        <template>
+          <div
+            id="app_box"
+            style="height: 200px;background-color: #000;color:#FFF;width: 100%;margin: 0 auto;"
+            v-pagination-infinite-scroll="doScroll"
+            infinite-scroll-disabled="scrolling"
+            infinite-scroll-distance="10"
+          >
+          <!-- Contents -->
+          </div>
+        </template>
+        <script>
+        export default {
+          methods: {
+            doScroll: function() {
+              var self = this;
+              var scrollHeight = 100;
+              self.scrolling = true;
+              setTimeout(function () {
+                var app = document.querySelector('#app_box');
+                var elHeight = app.clientHeight;
+                app.style.height = elHeight + scrollHeight + 'px';
+                self.scrolling = false
+                self.height = app.style.height
+              }, 2000)
+            }
+          }
+        }
+      `,
+      length: 10,
+      currentPage: 1,
+      lastPage: 20,
+      scrolling: false,
+      height: 300
     };
+  },
+  methods: {
+    doScroll: function() {
+      var self = this;
+      var scrollHeight = 100;
+      self.scrolling = true;
+      setTimeout(function() {
+        var app = document.querySelector("#app_box");
+        var elHeight = app.clientHeight;
+        app.style.height = elHeight + scrollHeight + "px";
+        self.scrolling = false;
+        self.height = app.style.height;
+      }, 2000);
+    }
   }
 };
 </script>
@@ -128,6 +206,18 @@ section {
     color: #5e6d82;
     line-height: 24px;
     margin: 15px 0px;
+  }
+}
+.gt-panel-table {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    td,
+    th {
+      padding: 5px;
+      border: 1px solid #5e6d82;
+    }
   }
 }
 
