@@ -70,18 +70,18 @@
           <template #title>Event</template>
           <template #body>
             <gt-collapse :opened="onOpend" :closed="onClosed">
-              <gt-collapse-item>
+              <gt-collapse-item name="item1">
                 <template #head>Head 1</template>
                 <template #content>Content 1</template>
               </gt-collapse-item>
-              <gt-collapse-item>
+              <gt-collapse-item name="item2">
                 <template #head>Head 2</template>
                 <template #content>Content 2</template>
               </gt-collapse-item>
             </gt-collapse>
           </template>
         </gt-panel>
-        <prism-editor :lineNumbers="true" :code="code_accordion" :readonly="true" language="html"></prism-editor>
+        <prism-editor :lineNumbers="true" :code="code_event" :readonly="true" language="html"></prism-editor>
       </div>
 
       <!-- Nestsed -->
@@ -246,13 +246,13 @@ export default {
   </gt-collapse-item>
 </gt-collapse>`,
       code_event: `<gt-collapse :opened="onOpend" :closed="onClosed">
-  <gt-collapse-item>
-    <template #head>head</template>
-    <template #content>content1</template>
+  <gt-collapse-item name="item1">
+    <template #head>Head 1</template>
+    <template #content>Content 1</template>
   </gt-collapse-item>
-  <gt-collapse-item>
-    <template #head>head</template>
-    <template #content>content2</template>
+  <gt-collapse-item name="item2">
+    <template #head>Head 2</template>
+    <template #content>Content 2</template>
   </gt-collapse-item>
 </gt-collapse>`,
       code_nested: `<!-- parent collapse -->
