@@ -39,16 +39,15 @@ section {
     border-collapse: collapse;
     margin-top: 20px;
     th, td {
-      padding: 1em 0;
+      padding: 1em;
     }
     th {
       font-weight: normal;
       background: #f9f9f9;
-      // border-bottom: 1px solid #d6d6d6;
     }
     td {
-      color: #666;   
       font-weight: lighter;
+      border-bottom: 1px solid #e8e8e8;
     }
   }
 }

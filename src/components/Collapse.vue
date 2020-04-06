@@ -141,15 +141,17 @@
         <p class="group-sub-title">gt-collapse</p>
         <table class="group-table">
           <colgroup>
-            <col style="width: 33%">
-            <col style="width: 33%">
-            <col style="width: 34%">
+            <col style="width: 20%">
+            <col style="width: 20%">
+            <col style="width: 20%">
+            <col style="width: 40%">
           </colgroup>
           <thead>
             <tr>
               <th>OPTION</th>
               <th>TYPE</th>
               <th>DEFAULT</th>
+              <th>DESCRIPTION</th>
             </tr>
           </thead>
           <tbody>
@@ -157,26 +159,31 @@
               <td>accordion</td>
               <td>Boolean</td>
               <td>false</td>
+              <td>-</td>
             </tr>
             <tr>
               <td>init</td>
               <td>String</td>
               <td>null</td>
+              <td>-</td>
             </tr>
             <tr>
               <td>opened</td>
               <td>Function</td>
               <td>null</td>
+              <td>-</td>
             </tr>
             <tr>
               <td>closed</td>
               <td>Function</td>
               <td>null</td>
+              <td>-</td>
             </tr>
             <tr>
               <td>customClass</td>
               <td>String</td>
               <td>null</td>
+              <td>-</td>
             </tr>
           </tbody>
         </table>
@@ -186,15 +193,17 @@
         <p class="group-sub-title">gt-collapse-item</p>
         <table class="group-table">
           <colgroup>
-            <col style="width: 33%">
-            <col style="width: 33%">
-            <col style="width: 34%">
+            <col style="width: 20%">
+            <col style="width: 20%">
+            <col style="width: 20%">
+            <col style="width: 40%">
           </colgroup>
           <thead>
             <tr>
               <th>OPTION</th>
               <th>TYPE</th>
               <th>DEFAULT</th>
+              <th>DESCRIPTION</th>
             </tr>
           </thead>
           <tbody>
@@ -202,6 +211,7 @@
               <td>name</td>
               <td>[String, Number]</td>
               <td>null</td>
+              <td>-</td>
             </tr>
           </tbody>
         </table>
