@@ -10,9 +10,12 @@
       <!-- Basic -->
       <gt-panel>
         <template #title>Pagination(Basic)</template>
-        <template #subtitle>preview</template>
+        <template #subtitle>
+          JSON API 기준의 값을 사용하므로 게시물 갯수가 아닌 페이지 범위만 사용함
+        </template>
         <template #body>
-          <gtpagination :length="10" :last_page="40" />
+          <gtpagination :length="10" :last_page="40" v-model="page" />
+          <p>현재 페이지: {{ page }}</p>
         </template>
         <template #gist>
           <prism-editor
@@ -75,10 +78,21 @@
     <div class="body-components">
       <gt-panel>
         <template #title>Pagination(infinite-Scroll) [Derective]</template>
+        <template #subtitle>
+          Derective로 브라우저 세로길이(+ 스크롤 길이)보다 컨텐츠의 세로 길이가 작을 경우 이벤트가 발생함
+        </template>
         <template #body>
           <a href="/component/pagination/preview">
             <gtbutton>예제보기(새창)</gtbutton>
           </a>
+        </template>
+        <template #gist>
+          <prism-editor
+            :lineNumbers="true"
+            :code="scroll_str"
+            :readonly="true"
+            language="html"
+          ></prism-editor>
         </template>
         <template #options>
           <p class="">options</p>
@@ -99,8 +113,8 @@
                 </tr>
                 <tr>
                   <td>infinite-scroll-distance(Number)</td>
-                  <td>최소 스크롤 계산 길이</td>
-                  <td>100</td>
+                  <td>이벤트가 발생하는 최소 스크롤 길이</td>
+                  <td>10</td>
                 </tr>
               </tbody>
             </table>
@@ -135,7 +149,7 @@ export default {
   name: "component-pagination",
   data() {
     return {
-      basic_str: `<gtpagination :length="10" :last_page="40" />`,
+      basic_str: `<gtpagination :length="10" :last_page="40" v-model="page" />`,
       scroll_str: `
         <template>
           <div
@@ -170,7 +184,8 @@ export default {
       currentPage: 1,
       lastPage: 20,
       scrolling: false,
-      height: 300
+      height: 300,
+      page: 1
     };
   },
   methods: {
