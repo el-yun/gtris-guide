@@ -2,75 +2,80 @@
   <section>
     <header>
       Tooltip
+      <p class="contents-header-desc">Tooltip user guide</p>
     </header>
-    <p class="contents-header-desc">Tooltip user guide</p>
+
     <div class="body-components">
-      <!-- preview Tooltip tag -->
-      <p class="gt-panel-title">preview</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
-          </div>
-        </div>
-        <div class="gt-panel-body">
-          <table style="width: 500px;">
+      <h2 class="group-title">Usage</h2>
+      <!-- Basic -->
+      <div class="group">
+        <gt-panel>
+          <template #title>Basic</template>
+          <template #body>
+            <gt-tooltip v-bind="{ position: 'bottom', message: 'gabia' }" style="margin-right:30px;" >
+              <p class="gt-btn green">bottom</p>
+            </gt-tooltip>
+
+            <gt-tooltip v-bind="{ position: 'left', message: 'frontend',  type: 'warning' }" style="margin-right:30px;" >
+              <span class="gt-btn red">left</span>
+            </gt-tooltip>
+
+            <gt-tooltip v-bind="{ position: 'right', message: 'js', type: 'danger' }" style="margin-right:30px;"  >
+              <button class="gt-btn blue">right</button>
+            </gt-tooltip>
+
+            <gt-tooltip v-bind="{ position: 'top', message: 'hiworks', type: 'info' }" style="margin-right:30px;"  >
+              <div class="gt-btn yellow">top</div>
+            </gt-tooltip>              
+          </template>
+        </gt-panel>
+        <prism-editor
+          :lineNumbers="true"
+          :code="code_basic"
+          :readonly="true"
+          language="html"
+        ></prism-editor>
+      </div>
+
+      <h2 class="group-title">Props</h2>
+      <!-- gt-collapse  -->
+      <div class="group">        
+        <table class="group-table">
+          <colgroup>
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 40%" />
+          </colgroup>
+          <thead>
             <tr>
-              <td>
-                <gt-tooltip v-bind="{ position: 'bottom', message: 'gabia' }">
-                  <p class="gt-btn green">bottom</p>
-                </gt-tooltip>
-              </td>
-              <td>
-                <gt-tooltip v-bind="{ position: 'left', message: 'frontend',type: 'warning' }" >
-                  <span  class="gt-btn red">left</span>
-                </gt-tooltip>
-              </td>
-              <td>
-                <gt-tooltip v-bind="{ position: 'right', message: 'js', type: 'danger' }"  >
-                  <button class="gt-btn blue">right</button>
-                </gt-tooltip>
-              </td>
-              <td>
-                <gt-tooltip v-bind="{ position: 'top', message: 'hiworks', type: 'info' }"  >
-                  <div class="gt-btn yellow">top</div>
-                </gt-tooltip>
-              </td>
+              <th>OPTION</th>
+              <th>TYPE</th>
+              <th>DEFAULT</th>
+              <th>DESCRIPTION</th>
             </tr>
-          </table>
-        </div>
-      </div>
-      <div class="gist">
-        <div class="gist-code">
-          <div class="gist-data">
-            <textarea :value="basic_btn_str" disabled style="height: 460px;" />
-          </div>
-        </div>
-      </div>
-
-
-      <!-- preview Tooltip props  -->
-      <p class="gt-panel-title">props</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
-          </div>
-        </div>
-        <div class="gt-panel-body">
-          <pre>
-  props: {
-    type:{ type: String, default : 'primary'}, // 'primary' , 'warning' , 'danger' , 'info'
-    position:{ type: String, default : 'bottom'},  // 'bottom' , 'left' , 'right' , 'top'
-    message: { type: String, default : 'message' }  // messasge  
-  }
-          </pre>
-
-        </div>
+          </thead>
+          <tbody>
+            <tr>
+              <td>type</td>
+              <td>String</td>
+              <td>'primary'</td>
+              <td>'primary' , 'warning' , 'danger' , 'info'</td>
+            </tr>
+            <tr>
+              <td>position</td>
+              <td>String</td>
+              <td>'bottom'</td>
+              <td>'bottom' , 'left' , 'right' , 'top'</td>
+            </tr>
+            <tr>
+              <td>message</td>
+              <td>String</td>
+              <td>false</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -78,27 +83,24 @@
 
 <script>
 export default {
-  name: "tooltip-test",
+  name: "tooltip-guide",
   data() {
     return {
-      basic_btn_str: `
-<gt-tooltip v-bind="{ position: 'bottom', message: 'gabia' }">
-  <!-- slot -->
-  <p >bottom</p>
+      code_basic: `<gt-tooltip v-bind="{ position: 'bottom', message: 'gabia' }" >
+  <p class="gt-btn green">bottom</p>
 </gt-tooltip>
 
-<gt-tooltip v-bind="{ position: 'left', message: 'frontend',type: 'warning' }" >  
-  <span  >left</span>
+<gt-tooltip v-bind="{ position: 'left', message: 'frontend',  type: 'warning' }">
+  <span class="gt-btn red">left</span>
 </gt-tooltip>
 
 <gt-tooltip v-bind="{ position: 'right', message: 'js', type: 'danger' }"  >
-  <button >right</button>
+  <button class="gt-btn blue">right</button>
 </gt-tooltip>
 
 <gt-tooltip v-bind="{ position: 'top', message: 'hiworks', type: 'info' }"  >
-  <div >top</div>
-</gt-tooltip>
-`
+  <div class="gt-btn yellow">top</div>
+</gt-tooltip>`
     };
   },
   methods: {
@@ -129,10 +131,18 @@ section {
 }
 
 .gt-btn {
-  margin: 10px 5px;
-  &.green{ background: green;  }
-  &.yellow{ background: yellow;  }
-  &.red{ background: red;  }
-  &.blue{ background:blue;  }
+  margin:5px;
+  &.green {
+    background: green;
+  }
+  &.yellow {
+    background: yellow;
+  }
+  &.red {
+    background: red;
+  }
+  &.blue {
+    background: blue;
+  }
 }
 </style>

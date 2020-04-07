@@ -2,59 +2,87 @@
   <section>
     <header>
       Toast
+      <p class="contents-header-desc">Toast user guide</p>
     </header>
-    <p class="contents-header-desc">Toast user guide (개선 필요)</p>
+
     <div class="body-components">
-      <gt-toast v-model="toast_payload" />
-      <!-- preview Tooltip tag -->
-      <p class="gt-panel-title">preview</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
-          </div>
-        </div>
-        <div class="gt-panel-body">
-          <gtbutton indicator="primary" @click="$_test({type:'primary', message:'hello world', direction: 'center-top' })">테스트(상단 중앙)</gtbutton>
-          <gtbutton indicator="secondary" @click="$_test({type:'warning', message:'hello world2', direction: 'left-bottom' })" >테스트(하단 왼쪽)</gtbutton>
-          <gtbutton indicator="danger" @click="$_test({type:'danger', message:'hello world3', direction: 'left-top' })">테스트(상단 왼쪽)</gtbutton>
-        </div>
+      <h2 class="group-title">Usage</h2>
+      <!-- Basic -->
+      <div class="group">
+        <gt-panel>
+          <template #title>Basic</template>
+          <template #body>
+            <gt-toast v-model="toast_payload" />
+            <div style="padding:10px;">
+              <gtbutton indicator="primary" @click="$_test({type:'primary', message:'hello world', direction: 'center-top' })">테스트(상단 중앙)</gtbutton>
+              <gtbutton indicator="secondary" @click="$_test({type:'warning', message:'hello world2', direction: 'left-bottom' })" >테스트(하단 왼쪽)</gtbutton>
+              <gtbutton indicator="danger" @click="$_test({type:'danger', message:'hello world3', direction: 'left-top' })">테스트(상단 왼쪽)</gtbutton>
+            </div>
+          </template>
+        </gt-panel>
+        <prism-editor
+          :lineNumbers="true"
+          :code="code_basic"
+          :readonly="true"
+          language="html"
+        ></prism-editor>
+        <br>
+        <p>script ( vue components example )</p>        
+        <prism-editor
+          :lineNumbers="true"
+          :code="code_script"
+          :readonly="true"
+          language="javascript"
+        ></prism-editor>
+        
       </div>
-      <div class="gist">
-        <div class="gist-code">
-          <div class="gist-data">
-            <textarea :value="basic_btn_str" disabled style="height: 460px;" />
-          </div>
-        </div>
-      </div>
+
+      <h2 class="group-title">Props</h2>
+      <!-- gt-collapse  -->
+      <div class="group">        
+        <table class="group-table">
+          <colgroup>
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 20%" />
+            <col style="width: 40%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>OPTION</th>
+              <th>TYPE</th>
+              <th>DEFAULT</th>
+              <th>DESCRIPTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>type</td>
+              <td>String</td>
+              <td>'primary'</td>
+              <td>'primary','info','warning','danger'</td>
+            </tr>
+            <tr>
+              <td>direction</td>
+              <td>String</td>
+              <td>'center-top'</td>
+              <td>'right-top','left-top','right-bottom','left-bottom','center-top','center-bottom'</td>
+            </tr>
+            <tr>
+              <td>message</td>
+              <td>String</td>
+              <td>''</td>
+              <td>toast message</td>
+            </tr>
 
 
-      <!-- preview Tooltip props  -->
-      <p class="gt-panel-title">props</p>
-      <div class="gt-panel">
-        <div class="gt-panel-header">
-          <div class="circles">
-            <span class="circle circle-red"></span>
-            <span class="circle circle-yellow"></span>
-            <span class="circle circle-green"></span>
-          </div>
-        </div>
-        <div class="gt-panel-body">
-          <pre>
-  props: {
-    type:{ type: String, default : 'primary'}, // 'primary' , 'warning' , 'danger' , 'info'
-    position:{ type: String, default : 'bottom'},  // 'bottom' , 'left' , 'right' , 'top'
-    message: { type: String, default : 'message' }  // messasge  
-  }
-          </pre>
-
-        </div>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 </template>
+
 
 <script>
 export default {
@@ -62,10 +90,19 @@ export default {
   data() {
     return {
       toast_payload:{} ,
-      basic_btn_str: `
-<gt-toast v-model="toast_payload" ></gt-toast>
+      code_basic:`<gt-toast v-model="toast_payload" ></gt-toast>
 
--- script -- 
+<gtbutton indicator="primary" @click="$_test({type:'primary', message:'hello world', direction: 'center-top' })">
+테스트(상단 중앙)
+</gtbutton>
+<gtbutton indicator="secondary" @click="$_test({type:'warning', message:'hello world2', direction: 'left-bottom' })" >
+테스트(하단 왼쪽)
+</gtbutton>
+<gtbutton indicator="danger" @click="$_test({type:'danger', message:'hello world3', direction: 'left-top' })">
+테스트(상단 왼쪽)
+</gtbutton>
+`,
+      code_script:`
 export default {
   name: "tooltip-test",
   data() {
@@ -74,13 +111,13 @@ export default {
     }
   },
   methods: {
-    $_test(){
-      this.toast_payload = {type:'primary', message:'hello world', direction: 'center-top' }
-    }
+    $_test(payload){
+      this.toast_payload = payload
+    },
   }
-}
--- script -- 
+}      
 `
+
     };
   },
   methods: {
