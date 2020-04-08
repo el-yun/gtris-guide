@@ -51,6 +51,25 @@
               </ul>
             </div>
           </li>
+
+          <li class="nav-item">
+            <a>Derective</a>
+            <div class="nav-group">
+              <ul class="sub-nav">
+                <li
+                  class="nav-item"
+                  v-for="item in derectiveMenu"
+                  :key="item.name"
+                >
+                  <router-link
+                    :to="item.link"
+                    :class="{ current: $_getCurrnet(item.name) }"
+                    >{{ item.name }}</router-link
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -77,6 +96,9 @@ export default {
         { name: "(Checkbox)", link: "/" },
         { name: "(Radio)", link: "/" },
         { name: "(Dropdown/Select)", link: "/" }
+      ],
+      derectiveMenu: [
+        { name: "InfiniteScroll", link: "/component/infinitescroll" }
       ]
     };
   },

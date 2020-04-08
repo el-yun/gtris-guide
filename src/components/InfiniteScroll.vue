@@ -1,33 +1,28 @@
 <template>
   <section>
     <header>
-      Pagination
+      Infinite-Scroll Pagination
     </header>
     <div class="body-components">
       <!-- Basic -->
       <gt-panel>
-        <template #title>Pagination(Basic)</template>
+        <template #title>Infinite-Scroll</template>
         <template #subtitle>
-          JSON API 기준의 값을 사용하므로 게시물 갯수가 아닌 페이지 범위만
-          사용함
+          Derective로 브라우저 세로길이(+ 스크롤 길이)보다 컨텐츠의 세로 길이가
+          작을 경우 이벤트가 발생함
         </template>
         <template #body>
-          <gtpagination :length="10" :last_page="40" v-model="page" />
-          <p>현재 페이지: {{ page }}</p>
+          <a href="/component/infintescroll/preview">
+            <gtbutton>예제보기(새창)</gtbutton>
+          </a>
         </template>
       </gt-panel>
-      <prism-editor
-        :lineNumbers="true"
-        :code="basic_str"
-        :readonly="true"
-        language="html"
-      ></prism-editor>
       <!-- Basic // -->
     </div>
 
     <h2 class="group-title">Options</h2>
     <div class="group">
-      <p class="group-sub-title">gtpagination</p>
+      <p class="group-sub-title">v-pagination-infinite-scroll</p>
       <table class="group-table">
         <colgroup>
           <col style="width: 20%" />
@@ -45,16 +40,16 @@
         </thead>
         <tbody>
           <tr>
-            <td>length</td>
-            <td>Number</td>
-            <td>10</td>
-            <td>노출할 페이지 번호 수</td>
+            <td>infinite-scroll-disabled</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>이벤트 지연 플래그 값</td>
           </tr>
           <tr>
-            <td>last_page</td>
+            <td>infinite-scroll-distance</td>
             <td>Number</td>
-            <td>1</td>
-            <td>마지막 페이지 번호</td>
+            <td>10</td>
+            <td>이벤트가 발생하는 최소 스크롤 길이</td>
           </tr>
         </tbody>
       </table>
@@ -62,25 +57,22 @@
 
     <h2 class="group-title">Event</h2>
     <div class="group">
-      <p class="group-sub-title">gtpagination</p>
+      <p class="group-sub-title">v-pagination-infinite-scroll</p>
       <table class="group-table">
         <colgroup>
-          <col style="width: 30%" />
-          <col style="width: 30%" />
           <col style="width: 40%" />
+          <col style="width: 50%" />
         </colgroup>
         <thead>
           <tr>
             <th>이름</th>
-            <th>타입</th>
             <th>설명</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>value(v-model)</td>
-            <td>Number</td>
-            <td>현재 페이지 번호</td>
+            <td>pagination-infinite-scroll</td>
+            <td>페이징이 확장될 경우 이벤트 발생</td>
           </tr>
         </tbody>
       </table>

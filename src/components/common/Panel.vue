@@ -28,8 +28,8 @@ export default {
   margin: 30px 0 20px;
   border-radius: 3px;
   border: 1px solid #e7e7e7;
-  box-shadow: 0 2px 8px rgba(0,0,0,.07);
-  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+
   .gt-panel-header {
     height: 38px;
     padding: 0;
@@ -60,7 +60,7 @@ export default {
           border-color: #1bc634;
         }
       }
-    }        
+    }
   }
 }
 
@@ -69,7 +69,7 @@ export default {
   margin-top: 50px;
   &:before {
     display: inline-block;
-    content: '#';
+    content: "#";
     color: #999;
     margin-right: 5px;
     font-weight: lighter;

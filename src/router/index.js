@@ -54,9 +54,17 @@ const routes = [
         }
       },
       {
-        path: "pagination/preview",
-        name: "PreviewScroll",
-        component: () => import("../components/PreviewScroll.vue"),
+        path: "infinitescroll",
+        name: "InfiniteScroll",
+        component: () => import("../components/InfiniteScroll.vue"),
+        meta: {
+          title: "Gtris v3 Component-Pagination"
+        }
+      },
+      {
+        path: "infintescroll/preview",
+        name: "InfiniteScroll",
+        component: () => import("../components/InfiniteScrollPreview.vue"),
         meta: {
           title: "Gtris v3 Component-Pagination-Scroll"
         }

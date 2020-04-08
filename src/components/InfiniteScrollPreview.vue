@@ -1,16 +1,31 @@
 <template>
-  <div
-    id="content"
-    style="height: 700px;background-color: #000;color:#FFF;width: 100%;margin: 0 auto;"
-    v-pagination-infinite-scroll="doScroll"
-    infinite-scroll-disabled="scrolling"
-    infinite-scroll-distance="0"
-  >
+  <section>
     <header>
-      Pagination
+      Infinite-Scroll Pagination
     </header>
-    <div class="body-components">Object Height: {{ height }}</div>
-  </div>
+    <div class="body-components">
+      <!-- Basic -->
+      <gt-panel>
+        <template #title>Infinite-Scroll</template>
+        <template #subtitle>
+          Derective로 브라우저 세로길이(+ 스크롤 길이)보다 컨텐츠의 세로 길이가
+          작을 경우 이벤트가 발생함
+        </template>
+        <template #body>
+          <div
+            id="content"
+            style="height: 700px;background-color: #000;color:#FFF;width: 100%;margin: 0 auto;"
+            v-pagination-infinite-scroll="doScroll"
+            infinite-scroll-disabled="scrolling"
+            infinite-scroll-distance="0"
+          >
+          <div class="body-components">Object Height: {{ height }}</div>
+          </div>
+        </template>
+      </gt-panel>
+      <!-- Basic // -->
+    </div>
+  </section>
 </template>
 
 <script>
