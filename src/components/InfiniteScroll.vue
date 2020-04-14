@@ -12,7 +12,7 @@
           작을 경우 이벤트가 발생함
         </template>
         <template #body>
-          <a href="/component/infintescroll/preview">
+          <a href="/gtris3/component/infinitescrollpreview">
             <gtbutton>예제보기(새창)</gtbutton>
           </a>
         </template>

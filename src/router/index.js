@@ -59,17 +59,15 @@ const routes = [
         component: () => import("../components/InfiniteScroll.vue"),
         meta: {
           title: "Gtris v3 Component-Pagination"
-        },
-        children: [
-          {
-            path: "preview",
-            name: "InfiniteScrollPreview",
-            component: () => import("../components/InfiniteScrollPreview.vue"),
-            meta: {
-              title: "Gtris v3 Component-Pagination-Scroll"
-            }
-          }
-        ]
+        }
+      },
+      {
+        path: "infinitescrollpreview",
+        name: "InfiniteScrollPreview",
+        component: () => import("../components/InfiniteScrollPreview.vue"),
+        meta: {
+          title: "Gtris v3 Component-Pagination-Scroll"
+        }
       },
       {
         path: "tooltip",
