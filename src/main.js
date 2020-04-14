@@ -13,7 +13,7 @@ import "vue-prism-editor/dist/VuePrismEditor.css";
 import gtPanel from "@/components/common/Panel.vue";
 
 Vue.config.productionTip = false;
-
+console.log("Gtris3")
 Vue.use(gtris);
 Vue.component("prism-editor", VuePrismEditor);
 Vue.component("gt-panel", gtPanel);

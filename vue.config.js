@@ -1,6 +1,7 @@
 "use strict";
 
 module.exports = {
+  publicPath: "/gtris3/",
   configureWebpack: {},
   css: {
     loaderOptions: {

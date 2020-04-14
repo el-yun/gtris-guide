@@ -1,0 +1,129 @@
+# repo.gabia.com/ui base image
+image: repo.gabia.com/ui/centos6-npm641-node8120-yarn1121:stable-0.1
+
+# gitlab variable
+variables:
+    GIT_URL: git@gitlab.gabia.com:ui/gtris3-guide.git
+    GIT_SUBMODULE_STRATEGY: recursive
+
+# Pipeline 구성
+stages:
+    - Check
+    - Build
+    - Deploy
+
+# Cache (branch)
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+#### 템플릿
+.before_script: &before_script |
+    echo "Before Script....."
+    mkdir -p ~/.ssh
+    chmod 700 ~/.ssh
+    touch ~/.ssh/id_rsa
+    echo "$SSH_PRIVATE_KEY_GITLAB" > ~/.ssh/gitlab
+    chmod 400 ~/.ssh/gitlab
+    echo "$SSH_PRIVATE_KEY_STAGING" > ~/.ssh/staging
+    chmod 400 ~/.ssh/staging
+    echo "$SSH_PRIVATE_KEY_PROD" > ~/.ssh/prod
+    chmod 400 ~/.ssh/prod
+    echo "$SSH_PRIVATE_KEY_UI" > ~/.ssh/ui
+    chmod 400 ~/.ssh/ui
+    echo "$SSH_CONFIG" > ~/.ssh/config
+    cat ~/.ssh/config
+
+    ssh -T git@gitlab.gabia.com
+    git config --global user.name "common"
+    git config --global user.email git@gabia.com
+    git remote set-url origin "$GIT_URL"
+    npm config set strict-ssl false
+    mkdir -p ./dist
+
+.set_dev_variables: &set_dev_variables
+    variables:
+        USER: dev
+        SERVER: 45.120.70.158
+        REMOTE_SERVER_IP: 45.120.70.158    
+        RSYNC_TO_PATH: /home/dev/www/releases/STAGE_"$CI_COMMIT_SHORT_SHA"
+        BUILD_ENV: test
+
+        SYMBOLIC_TARGET_PATH: /var/www/releases/STAGE_"$CI_COMMIT_SHORT_SHA"
+        SYMBOLIC_LINK_PATH: /var/www/gtris3-guide
+
+
+#### 체크
+# 문법 검증 (배포 시 제외)
+check:
+    stage: Check
+    before_script:
+        - *before_script
+    script:
+        - npm i
+        - npm run lint
+    only:
+        refs:
+            - branches
+    except:
+        refs:
+            - master
+            - /-(\d+).(\d+).((\d+)|(\d+).(\d+))$/
+
+#### 빌드
+# 개발서버 빌드
+build_dev:
+    stage: Build
+    before_script:
+        - *before_script
+    script:    
+        - echo "Build..<<Development>"
+        - npm i
+        - npm run build
+        - cp -r dist dist_dev
+    artifacts:
+        paths:
+        - dist_dev
+        expire_in: 3h
+
+    only:
+        refs:
+            - master
+    except:
+        refs:
+            - /-(\d+).(\d+).((\d+)|(\d+).(\d+))$/
+
+#### 배포
+## 개발서버 배포
+deploy_dev:
+    stage: Deploy
+    <<: *set_dev_variables
+    before_script:
+        - *before_script
+    script:
+        # 스테이징용 스크립트
+        - echo "Deploy..Dev.."
+        # Deploy
+        - ls ./dist_dev
+        # send local files to remote server
+        - rsync -artlp --ignore-existing ./dist_dev/ "$USER"@"$SERVER":"$RSYNC_TO_PATH"_"$CI_JOB_TIMESTAMP"
+
+        # compare remote files with local files
+        - compare=`rsync -artlpi --dry-run --ignore-existing ./dist_dev/ "$USER"@"$SERVER":"$RSYNC_TO_PATH"_"$CI_JOB_TIMESTAMP"`;
+        - if [ "$compare" == "" ]; then true; else echo $compare; false; fi;
+
+        # create/change symbolic link
+        - ssh -t "$USER"@"$SERVER" ln -fsn "$SYMBOLIC_TARGET_PATH"_"$CI_JOB_TIMESTAMP" "$SYMBOLIC_LINK_PATH"
+        - echo "Deploy Complete!"
+
+    retry: 2
+    environment:
+        name: deploy
+        url: https://fe.gabia.com/gtris3
+    only:
+        refs:
+            - master
+    except:
+        refs:
+            - /-(\d+).(\d+).((\d+)|(\d+).(\d+))$/
