@@ -26,6 +26,18 @@
       import "@gtris/vue/dist/gtris3.css";
     </div>
     <!-- eslint-enable -->
+
+    <div class="guide-title">
+      Gtris NPM 관련 Comments
+    </div>
+    <div class="comments">
+      <vue-disqus
+        shortname="gtris3"
+        identifier="npm"
+        url="http://fe.gabia.com/gtris3"
+        title="Gtris3"
+      ></vue-disqus>
+    </div>
   </div>
 </template>
 

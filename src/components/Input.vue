@@ -5,6 +5,15 @@
       <p class="contents-header-desc">Input user guide</p>
     </header>
 
+    <div class="comments">
+      <vue-disqus
+        shortname="gtris3"
+        identifier="input"
+        url="http://fe.gabia.com/gtris3/component/input"
+        title="Gtris Input"
+      ></vue-disqus>
+    </div>
+
     <div class="body-components">
       <h2 class="group-title">Usage</h2>
       <!-- Basic -->

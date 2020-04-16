@@ -3,6 +3,16 @@
     <header>
       Infinite-Scroll Pagination
     </header>
+
+    <div class="comments">
+      <vue-disqus
+        shortname="gtris3"
+        identifier="infinitescroll"
+        url="http://fe.gabia.com/gtris3/component/infinitescroll"
+        title="Gtris Infinite Scroll"
+      ></vue-disqus>
+    </div>
+
     <div class="body-components">
       <!-- Basic -->
       <gt-panel>

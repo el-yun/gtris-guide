@@ -4,6 +4,14 @@
       Tooltip
       <p class="contents-header-desc">Tooltip user guide</p>
     </header>
+    <div class="comments">
+      <vue-disqus
+        shortname="gtris3"
+        identifier="tooltip"
+        url="http://fe.gabia.com/gtris3/component/tooltip"
+        title="Gtris Tooltip"
+      ></vue-disqus>
+    </div>
 
     <div class="body-components">
       <h2 class="group-title">Usage</h2>

@@ -5,6 +5,14 @@
     <p class="contents-header-desc">Collapse user guide</p>
     </header>
 
+    <div class="comments">
+      <vue-disqus
+        shortname="gtris3"
+        identifier="collapse"
+        url="http://fe.gabia.com/gtris3/component/collapse"
+        title="Gtris Collapse"
+      ></vue-disqus>
+    </div>
     <div class="body-components">
       <h2 class="group-title">Usage</h2>
       <!-- Basic -->

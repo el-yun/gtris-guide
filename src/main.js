@@ -6,6 +6,8 @@ import gtris from "@gtris/vue";
 import "@gtris/vue/dist/gtris3.css";
 import "@/assets/scss/style.scss";
 
+import VueDisqus from 'vue-disqus'
+
 import "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import VuePrismEditor from "vue-prism-editor";
@@ -15,6 +17,7 @@ import gtPanel from "@/components/common/Panel.vue";
 Vue.config.productionTip = false;
 console.log("Gtris3")
 Vue.use(gtris);
+Vue.use(VueDisqus);
 Vue.component("prism-editor", VuePrismEditor);
 Vue.component("gt-panel", gtPanel);
 

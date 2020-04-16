@@ -5,6 +5,15 @@
       <p class="contents-header-desc">Toast user guide</p>
     </header>
 
+    <div class="comments">
+      <vue-disqus
+        shortname="gtris3"
+        identifier="toast"
+        url="http://fe.gabia.com/gtris3/component/toast"
+        title="Gtris Toast"
+      ></vue-disqus>
+    </div>
+
     <div class="body-components">
       <h2 class="group-title">Usage</h2>
       <!-- Basic -->

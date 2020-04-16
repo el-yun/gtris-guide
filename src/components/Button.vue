@@ -4,6 +4,14 @@
       Button
     </header>
     <p class="contents-header-desc">Button user guide</p>
+    <div class="comments">
+      <vue-disqus
+        shortname="gtris3"
+        identifier="button"
+        url="http://fe.gabia.com/gtris3/component/button"
+        title="Gtris Button"
+      ></vue-disqus>
+    </div>
     <div class="body-components">
       <h2 class="group-title">Usage</h2>
       <!-- Basic -->
@@ -15,9 +23,13 @@
             <gtbutton :disabled="true">버튼(disabled)</gtbutton>
           </template>
         </gt-panel>
-        <prism-editor :code="basic_btn_str" :readonly="true" language="html"></prism-editor>
+        <prism-editor
+          :code="basic_btn_str"
+          :readonly="true"
+          language="html"
+        ></prism-editor>
       </div>
-      
+
       <!-- Colored -->
       <div class="group">
         <gt-panel>
@@ -37,7 +49,11 @@
             </gtbutton>
           </template>
         </gt-panel>
-        <prism-editor :code="color_btn_str" :readonly="true" language="html"></prism-editor>
+        <prism-editor
+          :code="color_btn_str"
+          :readonly="true"
+          language="html"
+        ></prism-editor>
       </div>
 
       <!-- Icon -->
@@ -65,7 +81,11 @@
             <gtbutton type="icon" icon="print" />
           </template>
         </gt-panel>
-        <prism-editor :code="icon_btn_str" :readonly="true" language="html"></prism-editor>
+        <prism-editor
+          :code="icon_btn_str"
+          :readonly="true"
+          language="html"
+        ></prism-editor>
       </div>
     </div>
   </section>
