@@ -25,6 +25,15 @@
       import gtris from "@gtris/vue";<br>
       import "@gtris/vue/dist/gtris3.css";
     </div>
+
+    <div class="guide-title">
+      가이드 화면 내 DISQUS 추가
+    </div>
+    <prism-editor
+      :code="disqus_str"
+      :readonly="true"
+      language="html"
+    ></prism-editor>
     <!-- eslint-enable -->
 
     <div class="guide-title">
@@ -41,6 +50,23 @@
   </div>
 </template>
 
+
+<script>
+export default {
+  name: "guide",
+  data() {
+    return {
+      disqus_str: `<!-- ID와 Path는 다른 컴포넌트와 중복되면 안됨, 값을 수정하더라도 실제 반영되는데는 5분이상 소요 -->
+<vue-disqus
+  shortname="gtris3"
+  identifier="{컴포넌트ID}"
+  url="http://fe.gabia.com/gtris3/{컴포넌트 Path}"
+  title="{컴포넌트 타이틀}"
+></vue-disqus>`
+    };
+  }
+};
+</script>
 <style lang="scss" scoped>
 .guide {
   padding: 70px 10px;
