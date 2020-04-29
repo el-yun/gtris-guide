@@ -37,7 +37,7 @@
             </gt-tooltip> 
 
             <gt-tooltip v-bind="{ position: 'bottom', message: 'userStyle', type: 'info' , userStyle:{color:'red' , fontSize:'16px'} }" style="margin-right:30px;"  >
-              <div class="gt-btn yellow">userStyle</div>
+              <div class="gt-btn yellow">userStyle(color,fontSize)</div>
             </gt-tooltip>                              
           </template>
         </gt-panel>
