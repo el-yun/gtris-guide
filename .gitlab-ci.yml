@@ -12,12 +12,6 @@ stages:
     - Build
     - Deploy
 
-# Cache (branch)
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
-
 #### 템플릿
 .before_script: &before_script |
     echo "Before Script....."
