@@ -24,17 +24,21 @@
               <p class="gt-btn green">bottom</p>
             </gt-tooltip>
 
+            <gt-tooltip v-bind="{ position: 'top', message: 'hiworks', type: 'info' }" style="margin-right:30px;"  >
+              <div class="gt-btn yellow">top</div>
+            </gt-tooltip> 
+
             <gt-tooltip v-bind="{ position: 'left', message: 'frontend',  type: 'warning' }" style="margin-right:30px;" >
               <span class="gt-btn red">left</span>
             </gt-tooltip>
 
             <gt-tooltip v-bind="{ position: 'right', message: 'js', type: 'danger' }" style="margin-right:30px;"  >
               <button class="gt-btn blue">right</button>
-            </gt-tooltip>
+            </gt-tooltip> 
 
-            <gt-tooltip v-bind="{ position: 'top', message: 'hiworks', type: 'info' }" style="margin-right:30px;"  >
-              <div class="gt-btn yellow">top</div>
-            </gt-tooltip>              
+            <gt-tooltip v-bind="{ position: 'bottom', message: 'userStyle', type: 'info' , userStyle:{color:'red' , fontSize:'16px'} }" style="margin-right:30px;"  >
+              <div class="gt-btn yellow">userStyle</div>
+            </gt-tooltip>                              
           </template>
         </gt-panel>
         <prism-editor
@@ -82,6 +86,12 @@
               <td>false</td>
               <td>-</td>
             </tr>
+            <tr>
+              <td>userStyle</td>
+              <td>Object</td>
+              <td>false</td>
+              <td>ex> userStyle:{color:'red' , fontSize:'16px'}</td>
+            </tr>            
           </tbody>
         </table>
       </div>
@@ -98,6 +108,10 @@ export default {
   <p class="gt-btn green">bottom</p>
 </gt-tooltip>
 
+<gt-tooltip v-bind="{ position: 'top', message: 'hiworks', type: 'info' }"  >
+  <div class="gt-btn yellow">top</div>
+</gt-tooltip>
+
 <gt-tooltip v-bind="{ position: 'left', message: 'frontend',  type: 'warning' }">
   <span class="gt-btn red">left</span>
 </gt-tooltip>
@@ -106,9 +120,10 @@ export default {
   <button class="gt-btn blue">right</button>
 </gt-tooltip>
 
-<gt-tooltip v-bind="{ position: 'top', message: 'hiworks', type: 'info' }"  >
-  <div class="gt-btn yellow">top</div>
-</gt-tooltip>`
+<gt-tooltip v-bind="{ position: 'bottom', message: 'userStyle', type: 'info' , userStyle:{color:'red' , fontSize:'16px'} }" style="margin-right:30px;"  >
+  <div class="gt-btn yellow">bottom</div>
+</gt-tooltip>  
+`
     };
   },
   methods: {
