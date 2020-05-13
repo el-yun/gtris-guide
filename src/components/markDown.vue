@@ -13,7 +13,7 @@
           <template #title>Basic</template>
           <template #body >    
           <!-- .md 파일을 로드하여 Doc 파일 만드는 테스트 -->
-          <testMarkDown/>
+          <component :is="dynamicComponent" v-if="dynamicComponent" />
 
           </template>
         </gt-panel>       
@@ -32,11 +32,20 @@ export default {
   },
   data() {
     return {
-
+      dynamicComponent : null
     };
   },
-  created(){
-
+  computed: {
+    loader() {
+      return () => import(`@/assets/${this.$route.name}.md`)
+    }
+  },
+  mounted() {
+    this.loader().then(() => {
+      this.dynamicComponent = () => this.loader()
+    }).catch(() => {
+      this.dynamicComponent = () => import('@/assets/mark.md')
+    })
   },
   methods: {
     $_onCollapseOpened(payload) {      
