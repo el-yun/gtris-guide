@@ -38,6 +38,14 @@ const routes = [
         }
       },
       {
+        path: "markdown",
+        name: "markdown",
+        component: () => import("../components/markDown.vue"),
+        meta: {
+          title: "Gtris v3 markDown"
+        }
+      },      
+      {
         path: "collapse",
         name: "Collapse",
         component: () => import("../components/Collapse.vue"),
