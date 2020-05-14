@@ -109,6 +109,14 @@ const routes = [
         meta: {
           title: "Gtris v3 Form-Input"
         }
+      },
+      {
+        path: "modal",
+        name: "Modal",
+        component: () => import("../components/Modal.vue"),
+        meta: {
+          title: "Gtris v3 Form-Modal"
+        }
       }
     ]
   }

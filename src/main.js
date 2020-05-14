@@ -14,6 +14,7 @@ import VuePrismEditor from "vue-prism-editor";
 import "vue-prism-editor/dist/VuePrismEditor.css";
 import gtPanel from "@/components/common/Panel.vue";
 
+Vue.prototype.$eventHub = new Vue(); // Global event bus
 Vue.config.productionTip = false;
 console.log("Gtris3")
 Vue.use(gtris);

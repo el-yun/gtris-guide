@@ -85,7 +85,7 @@ export default {
         { name: "Collapse", link: "/component/collapse" },
         { name: "(Badge)", link: "/" },
         { name: "Pagination", link: "/component/pagination" },
-        { name: "(Modal)", link: "/" },
+        { name: "Modal", link: "/component/modal" },
         { name: "Tooltip", link: "/component/tooltip" },
         { name: "(Loading)", link: "/" },
         { name: "Toast", link: "/component/toast" }
