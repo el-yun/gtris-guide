@@ -1,11 +1,45 @@
 <!--split:basic-->
+--use-html--
+<div class="group">        
+  <table class="group-table">
+    <colgroup>
+      <col style="width: 20%" />
+      <col style="width: 20%" />
+      <col style="width: 20%" />
+      <col style="width: 40%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>OPTION</th>
+        <th>TYPE</th>
+        <th>DEFAULT</th>
+        <th>DESCRIPTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>type</td>
+        <td>String</td>
+        <td>'primary'</td>
+        <td>'primary','info','warning','danger'</td>
+      </tr>
+      <tr>
+        <td>direction</td>
+        <td>String</td>
+        <td>'center-top'</td>
+        <td>'right-top','left-top','right-bottom','left-bottom','center-top','center-bottom'</td>
+      </tr>
+      <tr>
+        <td>message</td>
+        <td>String</td>
+        <td>''</td>
+        <td>toast message</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
+<gtbutton indicator="primary">버튼(Primary)</gtbutton>
 
 <!--split:test-->
 

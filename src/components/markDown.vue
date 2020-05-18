@@ -18,7 +18,7 @@
             <br>
             <div v-html="$_markDownShow(test.test)"></div>
             <br>
-            <div v-html="$_markDownShow(test.float)" :key='numtest'></div>
+            <div v-html="$_markDownShow(test.float)" ></div>
           </template>
         </gt-panel>
       </div>
@@ -51,27 +51,36 @@ export default {
     //     console.log(this.dynamicComponent)
     //   })
     this.dynamicComponent = import(`@/assets/${this.$route.name}.md`).then((Response) => {
-      console.log(Response.default) 
+      //console.log(Response.default) 
       this.test = this.$_srDocsRun(Response.default)
-      console.log(this.test)
+      //console.log(this.test)
     })
       
   },
   methods: {
-    $_markDownShow(txt){      
-      marked.setOptions({
-        renderer: new marked.Renderer(),
-        gfm: true,
-        headerIds: false,
-        tables: true,
-        breaks: true,
-        pedantic: false,
-        sanitize: true,
-        smartLists: true,
-        smartypants: false
-      });
-      console.log(txt)
-      return marked(txt);
+    $_markDownShow(txt){
+      let returnTxt = ''
+      if(txt.indexOf('--use-html--') !== -1  ){ 
+        //! html tag 를 사용할 수 있게 해줌       
+        returnTxt = txt.replace("--use-html--", "");
+      }else{
+        marked.setOptions({
+          renderer: new marked.Renderer(),
+          gfm: true,
+          headerIds: false,
+          tables: true,
+          breaks: true,
+          pedantic: false,
+          sanitize: true,
+          smartLists: true,
+          smartypants: false
+        });
+        returnTxt = marked(txt);
+      }
+      
+
+      //console.log(returnTxt)
+      return returnTxt
     },
 
     $_onCollapseOpened(payload) {
