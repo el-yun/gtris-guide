@@ -1,20 +1,30 @@
 "use strict";
 
+
 module.exports = {
   publicPath: "/gtris3/",
+
   configureWebpack: {},
   chainWebpack: config => {
     config.module.rule('md')
       .test(/\.md/)
-      .use('vue-loader')
-      .loader('vue-loader')
+      .use('raw-loader')
+      .loader('raw-loader')
       .end()
-      .use('vue-markdown-loader')
-      .loader('vue-markdown-loader/lib/markdown-compiler')
-      .options({
-        raw: true
-      })
   },   
+
+  // chainWebpack: config => {
+  //   config.module.rule('md')
+  //     .test(/\.md/)
+  //     .use('vue-loader')
+  //     .loader('vue-loader')
+  //     .end()
+  //     .use('vue-markdown-loader')
+  //     .loader('vue-markdown-loader/lib/markdown-compiler')
+  //     .options({
+  //       raw: true
+  //     })
+  // },   
   css: {
     loaderOptions: {
       scss: {
