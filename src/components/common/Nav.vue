@@ -14,18 +14,20 @@
       <div class="divider"></div>
       <div class="folder-name">Global</div>
       <div class="menu-item"><router-link to="/">Color System</router-link></div>
-      
       <div class="folder-name">Components</div>
+      <div class="menu-item"><router-link to="/">(Badge)</router-link></div>
       <div class="menu-item"><router-link to="/">Collapse</router-link></div>
+      <div class="menu-item"><router-link to="/">(Loading)</router-link></div>
       <div class="menu-item"><router-link to="/">Modal</router-link></div>
       <div class="menu-item"><router-link to="/">Pagination</router-link></div>
       <div class="menu-item"><router-link to="/">Toast</router-link></div>
       <div class="menu-item"><router-link to="/">Tooltip</router-link></div>
-      
       <div class="folder-name">Forms</div>
       <div class="menu-item"><router-link to="/">Button</router-link></div>
       <div class="menu-item"><router-link to="/">Input</router-link></div>
-      
+      <div class="menu-item"><router-link to="/">Checkbox</router-link></div>
+      <div class="menu-item"><router-link to="/">Radio</router-link></div>
+      <div class="menu-item"><router-link to="/">Dropdown</router-link></div>
       <div class="folder-name">Directive</div>
       <div class="menu-item"><router-link to="/">InfiniteScroll</router-link></div>
     </div>  

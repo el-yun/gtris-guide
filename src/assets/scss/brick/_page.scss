@@ -111,22 +111,19 @@
     pre[class*="language-"] {
       background: $code-background;
     }
-    pre[class*="language-"] {
-      padding-top: 60px;
-    }
     // code[class*="language-"] {
     //   white-space: break-spaces;
     // }
 
     // copy prism code
     .btn-copy {
+      display: none;
       position: absolute;
       top: 15px;
       right: 15px;
       background: #606060;
       width: 30px;
       height: 30px;
-      display: inline-flex;
       justify-content: center;;
       align-items: center;
       border-radius: 4px;

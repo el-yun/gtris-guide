@@ -51,6 +51,9 @@ export default {
       position: relative;
       &:hover {
         border-color: #7e7e7e;
+        .btn-copy {
+          display: inline-flex;
+        }
       }
     }
   }
