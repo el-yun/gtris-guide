@@ -94,7 +94,7 @@ const routes = [
       {
         path: "tooltip",
         name: "Tooltip",
-        component: () => import("../components/Tooltip.vue"),
+        component: () => import("../components/GtrisDoc.vue"),
         meta: {
           title: "Gtris v3 Component-Tooltip"
         }
