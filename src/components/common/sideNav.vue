@@ -53,6 +53,7 @@ nav {
       font-size: 30px;
       font-weight: normal; 
     }
+    
     .select-wrapper {
       position: relative;
       vertical-align: middle;
