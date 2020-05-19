@@ -1,6 +1,6 @@
 <template>
   <div class="gt-panel" :class="{'reverse': isLocatedDesc}">
-    <p v-show="{'box': $slots.title}" class="gt-panel-title"><slot name="title"/></p>
+    <p v-show="$slots.title" class="gt-panel-title"><slot name="title"/></p>
     <div class="gt-panel-body" :class="{'box': $slots.box}">
       <slot name="box" />
       <slot name="any" />
