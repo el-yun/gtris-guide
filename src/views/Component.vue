@@ -1,44 +1,41 @@
 <template>
-  <div class="components">
-    <div class="components-page-scroll">
-      <sideNav />
-      <div class="page">
-        <router-view class="page-contents" />
-      </div>
+  <div class="wrap">
+    <div class="sidenav"><SideNav/></div>
+    <div class="docs-template">
+      <router-view/>
     </div>
   </div>
 </template>
 
 <script>
-import sideNav from "../components/common/sideNav.vue";
+import SideNav from "../components/common/SideNav.vue";
 
 export default {
   name: "components",
   components: {
-    sideNav
+    SideNav
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.components {
+.wrap {
+  display: flex;
   background: #fff;
+  height: 100vh;
+  overflow: hidden;
 
-  .components-page-scroll {
-    height: calc(100% - 80px);
-    margin-top: 80px;
-    overflow: hidden;
-    position: relative;
+  .sidenav {
+    flex: 0 0 240px;
+    height: 100%;
+    overflow: auto;
+    border-right: 1px solid #d8d8d8;
   }
-
-  .page {
-    padding-left: 270px;
-    padding-bottom: 100px;
-    box-sizing: border-box;
-
-    .page-contents {
-      padding-top: 50px;
-    }
+  .docs-template {
+    flex: 1 1 0;
+    height: 100%;
+    overflow: auto;
+    background: linear-gradient(90deg,#fff $pane-ratio,$code-background 0);
   }
 }
 </style>

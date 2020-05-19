@@ -1,12 +1,10 @@
 @charset "utf-8";
 
 //base
-@import "base/_typography.scss";
-@import "base/_variables.scss";
 @import "base/_reset.scss";
-
-//layout
-@import "layout/_layout.scss";
 
 //brick
 @import "brick/_page.scss";
+
+//vendor
+@import "vendor/fontawesome-pro-5.7.1-web";

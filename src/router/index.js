@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Guide from "../views/Guide.vue";
 import Component from "../views/Component.vue";
 
 Vue.use(VueRouter);
@@ -8,11 +7,17 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Guide",
-    component: Guide,
+    name: "Home",
+    component: Component,
     mata: {
       title: "Gtris v3"
-    }
+    },
+    children: [
+      {
+        path: "",
+        component: () => import("../components/Page.vue")
+      },
+    ]
   },
   {
     path: "/component",
@@ -24,7 +29,7 @@ const routes = [
     children: [
       {
         path: "",
-        component: () => import("../components/Button.vue"),
+        component: () => import("../components/Page.vue"),
         meta: {
           title: "Gtris v3 Component-button"
         }
