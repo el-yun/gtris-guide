@@ -182,7 +182,7 @@
 
 <script>
 export default {
-  name: "page",
+  name: 'page',
   data() {
     return {
       code_basic: `<gtbutton @click="$_openModal('basicModal')" indicator="primary">Open Modal</gtbutton>

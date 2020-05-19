@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@gtris/vue": "git+https://gm1702759:zKzTTuQkg7unZ-NdrAYM@gitlab.gabia.com/ui/gtris3-vue.git",
+    "axios": "^0.19.2",
     "core-js": "^3.6.4",
+    "path": "^0.12.7",
     "marked": "^1.1.0",
     "prismjs": "^1.19.0",
     "raw-loader": "^4.0.1",
