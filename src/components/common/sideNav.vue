@@ -1,170 +1,121 @@
 <template>
-  <div class="component-contents">
-    <div class="contents-wrap">
-      <div class="side-nav">
-        <ul>
-          <li class="nav-item">
-            <a>Global</a>
-            <div class="nav-group">
-              <!-- <p class="nav-group__title"></p> -->
-              <ul class="sub-nav">
-                <li class="nav-item">
-                  <router-link to="/">(Color)</router-link>
-                </li>
-                <li class="nav-item">
-                  <router-link to="/">(Scrollbar)</router-link>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a>Component</a>
-            <div class="nav-group">
-              <ul class="sub-nav">
-                <li
-                  class="nav-item"
-                  v-for="item in componentMenu"
-                  :key="item.name"
-                >
-                  <router-link
-                    :to="item.link"
-                    :class="{ current: $_getCurrnet(item.name) }"
-                    >{{ item.name }}</router-link
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a>Form</a>
-            <div class="nav-group">
-              <ul class="sub-nav">
-                <li class="nav-item" v-for="item in formMenu" :key="item.name">
-                  <router-link
-                    :to="item.link"
-                    :class="{ current: $_getCurrnet(item.name) }"
-                    >{{ item.name }}</router-link
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a>Derective</a>
-            <div class="nav-group">
-              <ul class="sub-nav">
-                <li
-                  class="nav-item"
-                  v-for="item in derectiveMenu"
-                  :key="item.name"
-                >
-                  <router-link
-                    :to="item.link"
-                    :class="{ current: $_getCurrnet(item.name) }"
-                    >{{ item.name }}</router-link
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+  <nav>
+    <div class="top">
+      <h1>GTRIS</h1>
+      <div class="select-wrapper">
+        <select class="version">
+          <option value="">v1.0.0</option>
+        </select>
       </div>
     </div>
-  </div>
+    <div class="menu">
+      <div class="menu-item"><router-link to="/"><i class="fal fa-book"></i>Guide</router-link></div>
+      <div class="menu-item"><router-link to="/"><i class='gi gi-history'></i>Timeline</router-link></div>
+      <div class="divider"></div>
+      <div class="folder-name">Global</div>
+      <div class="menu-item"><router-link to="/">Color System</router-link></div>
+      <div class="folder-name">Components</div>
+      <div class="menu-item"><router-link to="/">(Badge)</router-link></div>
+      <div class="menu-item"><router-link to="/">Collapse</router-link></div>
+      <div class="menu-item"><router-link to="/">(Loading)</router-link></div>
+      <div class="menu-item"><router-link to="/">Modal</router-link></div>
+      <div class="menu-item"><router-link to="/">Pagination</router-link></div>
+      <div class="menu-item"><router-link to="/">Toast</router-link></div>
+      <div class="menu-item"><router-link to="/">Tooltip</router-link></div>
+      <div class="folder-name">Forms</div>
+      <div class="menu-item"><router-link to="/">Button</router-link></div>
+      <div class="menu-item"><router-link to="/">Input</router-link></div>
+      <div class="menu-item"><router-link to="/">Checkbox</router-link></div>
+      <div class="menu-item"><router-link to="/">Radio</router-link></div>
+      <div class="menu-item"><router-link to="/">Dropdown</router-link></div>
+      <div class="folder-name">Directive</div>
+      <div class="menu-item"><router-link to="/">InfiniteScroll</router-link></div>
+    </div>  
+  </nav>
 </template>
 
 <script>
 export default {
-  name: "sidebar",
-  data() {
-    return {
-      componentMenu: [
-        { name: "Collapse", link: "/component/collapse" },
-        { name: "(Badge)", link: "/" },
-        { name: "Pagination", link: "/component/pagination" },
-        { name: "Modal", link: "/component/modal" },
-        { name: "Tooltip", link: "/component/tooltip" },
-        { name: "(Loading)", link: "/" },
-        { name: "Toast", link: "/component/toast" }
-      ],
-      formMenu: [
-        { name: "Button", link: "/component/button" },
-        { name: "Input/Textarea", link: "/component/input" },
-        { name: "(Checkbox)", link: "/" },
-        { name: "(Radio)", link: "/" },
-        { name: "(Dropdown/Select)", link: "/" }
-      ],
-      derectiveMenu: [
-        { name: "InfiniteScroll", link: "/component/infinitescroll" }
-      ]
-    };
-  },
-  methods: {
-    $_getCurrnet(name) {
-      return this.$route.name == name ? true : false;
-    }
-  }
+  name: "sidenav"
 };
 </script>
 
 <style lang="scss" scoped>
-.component-contents {
-  width: 240px;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  margin-top: 70px;
-
-  .contents-wrap {
-    height: 100%;
-    overflow-x: auto;
-  }
-
-  .side-nav {
-    height: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-right: 0;
-    ul {
-      padding-bottom: 50px;
-
-      > .nav-item > a {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #333;
-        line-height: 40px;
-        height: 40px;
-        margin: 0;
-        padding: 0;
-        text-decoration: none;
-        display: block;
-        position: relative;
-      }
+$leftSpace: 40px;
+$rightSpace: 30px;
+nav {
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px $rightSpace 20px $leftSpace;
+    h1 {
+      font-size: 30px;
+      font-weight: normal; 
     }
-    .sub-nav {
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
-      > .nav-item > a {
-        display: block;
-        height: 40px;
-        color: #666;
-        line-height: 40px;
-        font-size: 0.875rem;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        font-weight: 400;
-
-        &.current {
-          font-weight: bold;
-          color: #2f90d5;
-        }
+    .select-wrapper {
+      position: relative;
+      vertical-align: middle;
+      &:after {
+        font-family: 'gi-icons';
+        content: '\e954';
+        font-size: 0.5em;
+        height: 24px;
+        line-height: 24px;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        color:  #909090;
+        pointer-events: none;
+      }
+      select {
+        background: #f6f6f6;
+        border: 0;
+        border-radius: 12px;
+        min-width: 70px;
+        height: 24px;
+        font-size: 13px;
+        padding: 0 9px;
+        outline: 0;
+        color: $body-text-color;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+      }
+      select::-ms-expand {
+        display: none;
       }
     }
   }
+  .divider {
+    margin: 20px $rightSpace;
+    height: 1px;
+    background: #e6e6e6;
+  }
+  .folder-name {
+    padding: 0 $rightSpace 0 $leftSpace;
+    margin: 30px 0 10px;
+    font-size: 12px;
+    color: #909090;
+  }
+  .menu-item {
+    > a {
+      @include truncateFlexChild();
+      display: flex;
+      align-items: center;
+      padding: 0 $rightSpace 0 $leftSpace;
+      height: 36px;
+      &:hover, &:focus {
+        background-color: #eff4fc;
+        color: #2985db;
+      }
+      > i {
+        margin-right: 7px;
+      }
+    }
+  }
+
 }
 </style>

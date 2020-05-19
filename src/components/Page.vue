@@ -81,6 +81,7 @@
               <template #title>Untitled</template>
               <template #box>
                 <prism-editor :code="code_untitled" :readonly="true" language="html"></prism-editor>
+                <button type="button" class="btn-copy"><i class='gis gi-new-window'></i></button>
               </template>
             </gt-panel>
           </div>
@@ -120,6 +121,7 @@
               <template #title>Basic</template>
               <template #box>
                 <prism-editor :code="code_nested" :readonly="true" language="html"></prism-editor>
+                <button type="button" class="btn-copy"><i class='gis gi-new-window'></i></button>
               </template>
             </gt-panel>
           </div>
@@ -131,7 +133,6 @@
         <div class="row">
           <div class="row-example">
             <gt-panel>
-              <template #title>Basic</template>
               <template #any>
                 <table class="group-table">
                   <colgroup>

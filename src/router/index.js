@@ -1,8 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import Guide from "../views//Guide.vue";
-// import Component from "../views/Component.vue";
-import ComponentNew from "../views/ComponentNew.vue";
+import Component from "../views/Component.vue";
 
 Vue.use(VueRouter);
 
@@ -10,7 +8,7 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: ComponentNew,
+    component: Component,
     mata: {
       title: "Gtris v3"
     },
@@ -24,7 +22,7 @@ const routes = [
   {
     path: "/component",
     name: "component",
-    component: ComponentNew,
+    component: Component,
     mata: {
       title: "Gtris v3 Component"
     },
