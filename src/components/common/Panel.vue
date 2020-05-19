@@ -1,83 +1,59 @@
 <template>
-  <div>
-    <p class="gt-panel-title"><slot name="title" /></p>
-    <p class="gt-panel-subtitle"><slot name="subtitle" /></p>
-    <div class="gt-panel">
-      <div class="gt-panel-header">
-        <div class="circles">
-          <span class="circle circle-red"></span>
-          <span class="circle circle-yellow"></span>
-          <span class="circle circle-green"></span>
-        </div>
-      </div>
-      <div class="gt-panel-body">
-        <slot name="body" />
-      </div>
+  <div class="gt-panel" :class="{'reverse': isLocatedDesc}">
+    <p class="gt-panel-title"><slot name="title"/></p>
+    <div class="gt-panel-body" :class="{'box': $slots.box}">
+      <slot name="box" />
+      <slot name="any" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "gt-panel"
+  name: "gt-panel",
+  data() {
+    return {
+      isLocatedDesc: false
+    }
+  },
+  mounted() {
+    this.isLocatedDesc = this.$el.parentElement.className == 'row-desc';
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .gt-panel {
-  margin: 30px 0 20px;
-  border-radius: 3px;
-  border: 1px solid #e7e7e7;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  .gt-panel-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    &:before {
+      display: inline-block;
+      content: "#";
+      margin-right: 5px;
+    }
+  }
+  .gt-panel-body {
+    &.box {
+      padding: 20px 30px;
+      border: solid 1px #e6e6e6;
+    }
+  }
 
-  .gt-panel-header {
-    height: 38px;
-    padding: 0;
-    border-top: 1px solid #eaeae9;
-    border-bottom: 1px solid #dfdfde;
-    background: #ebebeb;
-
-    .circles {
-      margin: 4px 10px;
-      .circle {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: #fff;
-        border: 1px solid #fff;
-        margin-right: 5px;
-        &.circle-red {
-          background-color: #fc615c;
-          border-color: #fd504a;
-        }
-        &.circle-yellow {
-          background-color: #fec041;
-          border-color: #f0b542;
-        }
-        &.circle-green {
-          background-color: #33c849;
-          border-color: #1bc634;
-        }
+  &.reverse {
+    .gt-panel-title {
+      color: #c4c4c4;
+    }
+    .gt-panel-body.box {
+      border-color: #363636;
+      padding: 0;
+      position: relative;
+      &:hover {
+        border-color: #7e7e7e;
       }
     }
   }
 }
 
-.gt-panel-title {
-  font-size: 20px;
-  margin-top: 50px;
-  &:before {
-    display: inline-block;
-    content: "#";
-    color: #999;
-    margin-right: 5px;
-    font-weight: lighter;
-  }
-}
-
-.gt-panel-subtitle {
-  padding-left: 16px;
-  color: #666;
-}
 </style>

@@ -1,30 +1,37 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Guide from "../views/Guide.vue";
-import Component from "../views/Component.vue";
+// import Guide from "../views//Guide.vue";
+// import Component from "../views/Component.vue";
+import ComponentNew from "../views/ComponentNew.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Guide",
-    component: Guide,
+    name: "Home",
+    component: ComponentNew,
     mata: {
       title: "Gtris v3"
-    }
+    },
+    children: [
+      {
+        path: "",
+        component: () => import("../components/Page.vue")
+      },
+    ]
   },
   {
     path: "/component",
     name: "component",
-    component: Component,
+    component: ComponentNew,
     mata: {
       title: "Gtris v3 Component"
     },
     children: [
       {
         path: "",
-        component: () => import("../components/Button.vue"),
+        component: () => import("../components/Page.vue"),
         meta: {
           title: "Gtris v3 Component-button"
         }

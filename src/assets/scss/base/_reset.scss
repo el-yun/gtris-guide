@@ -8,7 +8,7 @@ input,select,textarea,button {vertical-align: middle;}
 input::-ms-clear {display: none;}
 button {border: 0; background-color: transparent; cursor: pointer;}
 body {direction: ltr; -webkit-text-size-adjust: none;}
-body,h1,h2,h3,h4,th,td,input,select,textarea,button,a:link, a:visited, a:hover {font-family: 'Spoqa Han Sans','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif; font-size: 1em; color: $w-text; line-height: 1.5; letter-spacing: -1px;}
+body,h1,h2,h3,h4,th,td,input,select,textarea,button,a:link, a:visited, a:hover {font-family: 'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif; font-size: 14px; color: $w-text; line-height: 1.5; letter-spacing: -1px;}
 a {text-decoration: none;}
 a:hover {text-decoration: none;}
 a:active {background-color: transparent;}
