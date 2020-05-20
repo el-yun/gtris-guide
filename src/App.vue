@@ -20,8 +20,9 @@ export default {
       //console.log(this.$store.getters[''])
       await console.log(
         this.$store.getters['Map/getComponentsMenu'],
-        this.$store.getters['Map/getVersion'],
+        this.$store.getters['Map/getVersion']
       );
-    },
-  },
+    }
+  }
 };
+</script>
