@@ -41,11 +41,11 @@
       <div class="menu-item"><router-link to="/">(Loading)</router-link></div>
       <div class="menu-item"><router-link to="/">Modal</router-link></div>
       <div class="menu-item"><router-link to="/">Pagination</router-link></div>
-      <div class="menu-item"><router-link to="/">Toast</router-link></div>
-      <div class="menu-item"><router-link to="/">Tooltip</router-link></div>
+      <div class="menu-item"><router-link to="/component/toast">Toast</router-link></div>
+      <div class="menu-item"><router-link to="/component/tooltip">Tooltip</router-link></div>
       <div class="folder-name">Forms</div>
-      <div class="menu-item"><router-link to="/">Button</router-link></div>
-      <div class="menu-item"><router-link to="/">Input</router-link></div>
+      <div class="menu-item"><router-link to="/component/button">Button</router-link></div>
+      <div class="menu-item"><router-link to="/component/input">Input</router-link></div>
       <div class="menu-item"><router-link to="/">Checkbox</router-link></div>
       <div class="menu-item"><router-link to="/">Radio</router-link></div>
       <div class="menu-item"><router-link to="/">Dropdown</router-link></div>
@@ -123,7 +123,8 @@ nav {
         min-width: 70px;
         height: 24px;
         font-size: 13px;
-        padding: 0 9px;
+        padding-left: 9px;
+        padding-right: 24px;
         outline: 0;
         color: $body-text-color;
         -webkit-appearance: none;

@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page" :class="{'hide-code': hide_code}">
     <header>
       <div>
         <h2>Modal</h2>
@@ -185,6 +185,7 @@ export default {
   name: 'page',
   data() {
     return {
+      hide_code: false,
       code_basic: `<gtbutton @click="$_openModal('basicModal')" indicator="primary">Open Modal</gtbutton>
       
 <gt-modal name="basicModal">

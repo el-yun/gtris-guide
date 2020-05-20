@@ -35,7 +35,6 @@ export default {
     flex: 1 1 0;
     height: 100%;
     overflow: auto;
-    background: linear-gradient(90deg, #fff $pane-ratio, $code-background 0);
   }
 }
 </style>

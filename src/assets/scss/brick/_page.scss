@@ -1,5 +1,6 @@
 .page {
   position: relative;
+  background: linear-gradient(90deg, #fff $pane-ratio, $code-background 0);
   button {
     outline: none;
   }
@@ -14,6 +15,11 @@
     bottom: 0;
     left: $pane-ratio;
     background: #707070;
+    transition: width 200ms;
+    // cursor: e-resize;
+    &:hover {
+      width: 12px;
+    }
   }  
   // header
   header {
@@ -105,6 +111,25 @@
       }
     }
 
+    .group-table-div {
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        th, td {
+          padding: 1em;
+        }
+        th {
+          font-weight: normal;
+          background: #f9f9f9;
+        }
+        td {
+          border-bottom: 1px solid #e8e8e8;
+          color: $body-text-color;
+        }
+      }
+    }
+
+
     // prism
     :not(pre) > code[class*="language-"],
     pre[class*="language-"] {
@@ -132,6 +157,27 @@
       }
       &:hover {
         transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// hide code
+.page.hide-code {
+  background: #fff;
+  &:before {
+    display: none;
+  }
+  header {
+    width: 100%;
+  }
+  .contents {
+    .row {
+      .row-example {
+        width: 100%;
+      }
+      .row-desc {
+        display: none;
       }
     }
   }
