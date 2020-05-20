@@ -5,10 +5,16 @@
         <h2>Modal</h2>
         <p class="page-desc">Modal user guide</p>
       </div>
-      <div>
-        <a href="/"></a>
-        <button type="button" class="btn-reference"><i class="fas fa-drafting-compass"></i>Zeplin</button>
-        <button type="button" class="btn-reference"><i class="fab fa-gitlab"></i>Gitlab</button>
+      <div class="header-btns">
+        <div>
+          <a href="/"></a>
+          <button type="button" class="btn-reference"><i class="fas fa-drafting-compass"></i>Zeplin</button>
+          <button type="button" class="btn-reference"><i class="fab fa-gitlab"></i>Gitlab</button>
+        </div>
+        <button @click="$_toggle" type="button" class="btn-hide-code">
+          <i v-if="hide_code" class="far fa-chevron-double-left"></i>
+          <i v-else class="far fa-times"></i>
+        </button>
       </div>
     </header>
     <div class="contents">
@@ -248,6 +254,9 @@ export default {
     $_submit(name, data = null) {
       window.alert(data);
       this.$_closeModal(name);
+    },
+    $_toggle() {
+      this.hide_code = !this.hide_code;
     }
   }
 };
