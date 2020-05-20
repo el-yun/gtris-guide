@@ -42,10 +42,10 @@
       <div class="menu-item"><router-link to="/">Modal</router-link></div>
       <div class="menu-item"><router-link to="/">Pagination</router-link></div>
       <div class="menu-item"><router-link to="/">Toast</router-link></div>
-      <div class="menu-item"><router-link to="/">Tooltip</router-link></div>
+      <div class="menu-item"><router-link to="/component/tooltip">Tooltip</router-link></div>
       <div class="folder-name">Forms</div>
-      <div class="menu-item"><router-link to="/">Button</router-link></div>
-      <div class="menu-item"><router-link to="/">Input</router-link></div>
+      <div class="menu-item"><router-link to="/component/button">Button</router-link></div>
+      <div class="menu-item"><router-link to="/component/input">Input</router-link></div>
       <div class="menu-item"><router-link to="/">Checkbox</router-link></div>
       <div class="menu-item"><router-link to="/">Radio</router-link></div>
       <div class="menu-item"><router-link to="/">Dropdown</router-link></div>

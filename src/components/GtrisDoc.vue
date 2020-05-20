@@ -70,6 +70,7 @@ export default {
   name: "page",
   data() {
     return {
+      prevName:'',
       discusName:'',
       componentName:'',
       dynamicComponent:'',
@@ -77,25 +78,35 @@ export default {
       showMenu:[]
     };
   },
+  watch:{
+    $route:function(to){
+      if(to.name != this.prevName)
+        this.$_renderFnc()
+    }
+  },
+
   mounted(){
-    this.componentName = this.$route.name;
-    this.discusName = this.$route.name.toLowerCase()    
-
-    import(`@/assets/gtris-markdown/${this.$route.name}.txt`).then((Response) => {
-      let doc_txt = this.$_srDocsRun(Response.default) 
-      let menu = eval(doc_txt.basic)
-      this.propsTable = doc_txt['props']
-      
-      menu.forEach(element => {
-        element.sourceCode = doc_txt[`${element.componentName}:sourceCode`];
-        element.component = () => import(`@/assets/gtris-markdown/${element.componentName}.md`)
-      });
-
-      this.showMenu = menu;
-      console.log(this.showMenu)
-    })
+    this.$_renderFnc()
   },
   methods: {
+    $_renderFnc(){    
+      this.componentName = this.$route.name;
+      this.discusName = this.$route.name.toLowerCase()    
+
+      import(`@/assets/gtris-markdown/${this.$route.name}.txt`).then((Response) => {
+        let doc_txt = this.$_srDocsRun(Response.default) 
+        let menu = eval(doc_txt.basic)
+        this.propsTable = doc_txt['props']
+        
+        menu.forEach(element => {
+          element.sourceCode = doc_txt[`${element.componentName}:sourceCode`];
+          element.component = () => import(`@/assets/gtris-markdown/${element.componentName}.md`)
+        });
+
+        this.showMenu = menu;
+        this.prevName = this.$route.name
+      })
+    },
     $_openModal(name) {
       this.$eventHub.$emit(`gt::opened::modal-${name}`, name); 
     },
@@ -136,10 +147,15 @@ export default {
           smartypants: false
         });
         returnTxt = marked(txt);
-      }
-      console.log(returnTxt)
+      }      
       return returnTxt
     }        
   }
 };
 </script>
+
+<style lang="scss">
+.hiworks-input-custom-class {
+  border: 4px solid orangered !important;
+}
+</style>
