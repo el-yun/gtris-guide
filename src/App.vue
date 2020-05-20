@@ -1,27 +1,40 @@
 <template>
   <div id="app">
+    <overlayLoading
+      :active.sync="isLoading"
+      :can-cancel="false"
+      :is-full-page="true"
+    ></overlayLoading>
     <router-view />
   </div>
 </template>
 
 <script>
+// Import component
+import overlayLoading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+
 export default {
-  name: 'gtris',
+  name: "gtris",
   data() {
-    return {};
+    return {
+      isLoading: false
+    };
+  },
+  components: {
+    overlayLoading
   },
   created() {
-    this.$_getMenu();
+    this.$eventHub.$on("MENU_API_LOADED", this.$_menuloaded);
+    this.isLoading = true;
+  },
+  beforeDestroy() {
+    this.$eventHub.$off("MENU_API_LOADED");
   },
   methods: {
-    async $_getMenu() {
-      await this.$store.dispatch('Map/SET_MAP');
-      await this.$store.dispatch('Map/SET_TAG');
-      //console.log(this.$store.getters[''])
-      await console.log(
-        this.$store.getters['Map/getComponentsMenu'],
-        this.$store.getters['Map/getVersion'],
-      );
-    },
-  },
+    $_menuloaded() {
+      this.isLoading = false;
+    }
+  }
 };
+</script>
