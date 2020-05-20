@@ -12,7 +12,7 @@
           <button type="button" class="btn-reference"><i class="fab fa-gitlab"></i>Gitlab</button>
         </div>
         <button @click="$_toggle" type="button" class="btn-hide-code">
-          <i v-if="hide_code" class="far fa-chevron-double-left"></i>
+          <i v-if="hide_code" class="far fa-code"></i>
           <i v-else class="far fa-times"></i>
         </button>
       </div>
