@@ -1,5 +1,6 @@
 .page {
   position: relative;
+  background: linear-gradient(90deg, #fff $pane-ratio, $code-background 0);
   button {
     outline: none;
   }
@@ -14,6 +15,11 @@
     bottom: 0;
     left: $pane-ratio;
     background: #707070;
+    transition: width 200ms;
+    // cursor: e-resize;
+    &:hover {
+      width: 12px;
+    }
   }  
   // header
   header {
@@ -151,6 +157,27 @@
       }
       &:hover {
         transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// hide code
+.page.hide-code {
+  background: #fff;
+  &:before {
+    display: none;
+  }
+  header {
+    width: 100%;
+  }
+  .contents {
+    .row {
+      .row-example {
+        width: 100%;
+      }
+      .row-desc {
+        display: none;
       }
     }
   }
