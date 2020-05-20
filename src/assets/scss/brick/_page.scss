@@ -105,6 +105,25 @@
       }
     }
 
+    .group-table-div {
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        th, td {
+          padding: 1em;
+        }
+        th {
+          font-weight: normal;
+          background: #f9f9f9;
+        }
+        td {
+          border-bottom: 1px solid #e8e8e8;
+          color: $body-text-color;
+        }
+      }
+    }
+
+
     // prism
     :not(pre) > code[class*="language-"],
     pre[class*="language-"] {

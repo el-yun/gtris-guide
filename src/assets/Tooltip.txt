@@ -1,5 +1,5 @@
 <!--split:basic-->
-[ { "componentName":"Tooltip_1" , "sourceCode":"" }, { "componentName":"Tooltip_2" , "sourceCode":"" }]
+[ { "componentName":"Tooltip_1", "menuName":"basic" , "sourceCode":"" }]
 
 <!--split:Tooltip_1:sourceCode-->
 
@@ -46,3 +46,13 @@
     </gt-tooltip>
   </template>
 </gt-panel>
+
+
+<!--split:props-->
+
+| OPTION | TYPE | DEFAULT | DESCRIPTION |
+|--|--|--|----| 
+| type | String | 'primary' | 'primary' , 'warning' , 'danger' , 'info' |
+| position | String | 'bottom' |'bottom' , 'left' , 'right' , 'top' |
+| message | String | false | - |
+| userStyle | Object | false | ex> userStyle:{color:'red' , fontSize:'16px'} |

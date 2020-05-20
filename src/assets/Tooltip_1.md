@@ -1,5 +1,5 @@
 <gt-panel>
-  <template #title>test1</template>
+  <template #title>basic</template>
   <template #box>
     <gt-tooltip v-bind="{ position: 'bottom', message: 'gabia' }" style="margin-right:30px;" >
       <gtbutton indicator="primary" >bottom</gtbutton>
