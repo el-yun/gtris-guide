@@ -117,14 +117,14 @@ export default {
     this.componentName = this.$route.name;
     this.discusName = this.$route.name.toLowerCase()    
 
-    import(`@/assets/${this.$route.name}.txt`).then((Response) => {
+    import(`@/assets/gtris-markdown/${this.$route.name}.txt`).then((Response) => {
       let doc_txt = this.$_srDocsRun(Response.default) 
       let menu = eval(doc_txt.basic)
       this.propsTable = doc_txt['props']
       
       menu.forEach(element => {
         element.sourceCode = doc_txt[`${element.componentName}:sourceCode`];
-        element.component = () => import(`@/assets/${element.componentName}.md`)
+        element.component = () => import(`@/assets/gtris-markdown/${element.componentName}.md`)
       });
 
       this.showMenu = menu;
