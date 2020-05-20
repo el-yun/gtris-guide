@@ -124,7 +124,8 @@ nav {
         min-width: 70px;
         height: 24px;
         font-size: 13px;
-        padding: 0 9px;
+        padding-left: 9px;
+        padding-right: 24px;
         outline: 0;
         color: $body-text-color;
         -webkit-appearance: none;
