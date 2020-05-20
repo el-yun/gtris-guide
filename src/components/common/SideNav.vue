@@ -81,7 +81,6 @@ export default {
           ? this.versionItems.indexOf(this.$route.params.version)
           : 0;
       }
-      await console.log(this.versionItems, this.currentVersion);
       await this.$eventHub.$emit("MENU_API_LOADED");
     }
   }
