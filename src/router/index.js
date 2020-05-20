@@ -35,31 +35,6 @@ const routes = [
         }
       },
       {
-        path: "button",
-        name: "Button",
-        component: () => import("../components/Button.vue"),
-        meta: {
-          title: "Gtris v3 Form-button"
-        }
-      },
-      {
-        path: "markdown",
-        name: "markDown",
-        component: () => import("../components/markDown.vue"),
-        meta: {
-          title: "Gtris v3 markDown"
-        }
-      },      
-      {
-        path: "loadTest",
-        name: "loadTest",
-        component: () => import("../components/markDown.vue"),
-        meta: {
-          title: "Gtris v3 markDown"
-        }
-      },  
-
-      {
         path: "collapse",
         name: "Collapse",
         component: () => import("../components/Collapse.vue"),
@@ -91,6 +66,7 @@ const routes = [
           title: "Gtris v3 Component-Pagination-Scroll"
         }
       },
+      //! 마크다운 적용 start
       {
         path: "tooltip",
         name: "Tooltip",
@@ -99,6 +75,15 @@ const routes = [
           title: "Gtris v3 Component-Tooltip"
         }
       },
+      {
+        path: "button",
+        name: "Button",
+        component: () => import("../components/GtrisDoc.vue"),
+        meta: {
+          title: "Gtris v3 Form-button"
+        }
+      },
+      //! 마크다운 적용 end
       {
         path: "toast",
         name: "Toast",

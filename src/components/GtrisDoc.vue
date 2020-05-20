@@ -52,42 +52,6 @@
             <gt-panel>
               <template #any>
                 <div class="group-table-div" v-html="$_markDownShow(propsTable)"> </div>                
-                <!-- <table class="group-table">
-                  <colgroup>
-                    <col style="width: 20%">
-                    <col style="width: 20%">
-                    <col style="width: 20%">
-                    <col style="width: 40%">
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th>OPTION</th>
-                      <th>TYPE</th>
-                      <th>DEFAULT</th>
-                      <th>DESCRIPTION</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>name</td>
-                      <td>[String, Number]</td>
-                      <td>true</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>customClass</td>
-                      <td>String</td>
-                      <td>false</td>
-                      <td>-</td>
-                    </tr>
-                    <tr>
-                      <td>width</td>
-                      <td>String</td>
-                      <td>false</td>
-                      <td>default: 700px</td>
-                    </tr>
-                  </tbody>
-                </table> -->
               </template>
             </gt-panel>
           </div>
