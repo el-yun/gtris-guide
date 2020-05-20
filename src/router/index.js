@@ -83,23 +83,24 @@ const routes = [
           title: "Gtris v3 Form-button"
         }
       },
-      //! 마크다운 적용 end
+      {
+        path: "input",
+        name: "Input",
+        component: () => import("../components/GtrisDoc.vue"),
+        meta: {
+          title: "Gtris v3 Form-Input"
+        }
+      },      
       {
         path: "toast",
         name: "Toast",
-        component: () => import("../components/Toast.vue"),
+        component: () => import("../components/GtrisDoc.vue"),
         meta: {
           title: "Gtris v3 Component-Toast"
         }
       },
-      {
-        path: "input",
-        name: "Input/Textarea",
-        component: () => import("../components/Input.vue"),
-        meta: {
-          title: "Gtris v3 Form-Input"
-        }
-      },
+      //! 마크다운 적용 end
+
       {
         path: "modal",
         name: "Modal",
