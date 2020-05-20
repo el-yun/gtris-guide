@@ -3,7 +3,7 @@
 
 module.exports = {
   publicPath: "/gtris3/",
-
+  runtimeCompiler: true,
   configureWebpack: {},
   // chainWebpack: config => {
   //   config.module.rule('txt')
