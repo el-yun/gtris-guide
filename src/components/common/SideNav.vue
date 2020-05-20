@@ -41,7 +41,7 @@
       <div class="menu-item"><router-link to="/">(Loading)</router-link></div>
       <div class="menu-item"><router-link to="/">Modal</router-link></div>
       <div class="menu-item"><router-link to="/">Pagination</router-link></div>
-      <div class="menu-item"><router-link to="/">Toast</router-link></div>
+      <div class="menu-item"><router-link to="/component/toast">Toast</router-link></div>
       <div class="menu-item"><router-link to="/component/tooltip">Tooltip</router-link></div>
       <div class="folder-name">Forms</div>
       <div class="menu-item"><router-link to="/component/button">Button</router-link></div>

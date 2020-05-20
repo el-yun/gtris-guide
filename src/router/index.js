@@ -91,15 +91,15 @@ const routes = [
           title: "Gtris v3 Form-Input"
         }
       },      
-      //! 마크다운 적용 end
       {
         path: "toast",
         name: "Toast",
-        component: () => import("../components/Toast.vue"),
+        component: () => import("../components/GtrisDoc.vue"),
         meta: {
           title: "Gtris v3 Component-Toast"
         }
       },
+      //! 마크다운 적용 end
 
       {
         path: "modal",

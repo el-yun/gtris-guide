@@ -75,7 +75,8 @@ export default {
       componentName:'',
       dynamicComponent:'',
       propsTable:'',
-      showMenu:[]
+      showMenu:[],
+      exceptArr:['Toast']
     };
   },
   watch:{
@@ -89,7 +90,7 @@ export default {
     this.$_renderFnc()
   },
   methods: {
-    $_renderFnc(){    
+    $_renderFnc(){          
       this.componentName = this.$route.name;
       this.discusName = this.$route.name.toLowerCase()    
 
@@ -100,9 +101,12 @@ export default {
         
         menu.forEach(element => {
           element.sourceCode = doc_txt[`${element.componentName}:sourceCode`];
-          element.component = () => import(`@/assets/gtris-markdown/${element.componentName}.md`)
+          if(this.exceptArr.indexOf(this.$route.name) !== -1){ 
+            element.component = () => import(`@/assets/gtris-markdown/${element.componentName}.vue`)
+          }else{
+            element.component = () => import(`@/assets/gtris-markdown/${element.componentName}.md`)
+          }          
         });
-
         this.showMenu = menu;
         this.prevName = this.$route.name
       })

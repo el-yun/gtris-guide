@@ -43,7 +43,11 @@
 
 | OPTION | TYPE | DEFAULT | DESCRIPTION |
 |--|--|--|----| 
-| indicator | String | 'primary' | 'primary' , 'secondary' , 'danger'  |
-| type | String | false |'icon' |
-| type='icon' icon="{type}" | String | false | trash , star , bell ... |
-| disabled | Boolean | false |  |
+| defaultValue | String | '' | required : false  |
+| placeholder | String | false | required : false |
+| size | String | false | required : false |
+| width | String | false | required : false |
+| height | String | false | required : false |
+| customClass | String | false | required : false |
+| (event) pressEnter  |  |  |  |
+| (event) keyup  |  |  |  |
