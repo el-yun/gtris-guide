@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import Map from './map'
+import Map from "./map";
 
 Vue.use(Vuex);
 
