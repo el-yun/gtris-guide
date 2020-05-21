@@ -19,7 +19,7 @@
       <div class="group">
         <gt-panel>
           <template #title>Basic</template>
-          <template #body>
+          <template #box>
             <gt-collapse>
               <gt-collapse-item>
                 <template #head>Default Type Head 1</template>
@@ -38,7 +38,7 @@
       <div class="group">
         <gt-panel>
           <template #title>Activate</template>
-          <template #body>
+          <template #box>
             <gt-collapse init="item1">
               <gt-collapse-item name="item1">
                 <template #head>Activated Head</template>
@@ -57,7 +57,7 @@
       <div class="group">
         <gt-panel>
           <template #title>Accordion</template>
-          <template #body>
+          <template #box>
             <gt-collapse accordion>
               <gt-collapse-item>
                 <template #head>Accordion Type Head 1</template>
@@ -76,7 +76,7 @@
       <div class="group">
         <gt-panel>
           <template #title>Event</template>
-          <template #body>
+          <template #box>
             <gt-collapse :opened="onOpend" :closed="onClosed">
               <gt-collapse-item name="item1">
                 <template #head>Head 1</template>
@@ -96,7 +96,7 @@
       <div class="group">
         <gt-panel>
           <template #title>Nestsed</template>
-          <template #body>
+          <template #box>
             <!-- parent collapse -->
             <gt-collapse>
               <gt-collapse-item>
