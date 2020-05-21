@@ -1,15 +1,19 @@
 <template>
-  <div class="page">
+  <div class="page" :class="{'hide-code': hide_code}">
     <header>
       <div>
         <h2>{{componentName}}</h2>
         <p class="page-desc">{{componentName}} user guide</p>
       </div>
-      <div>
+      <div class="header-btns">
         <a href="/"></a>
         <button type="button" class="btn-reference"><i class="fas fa-drafting-compass"></i>Zeplin</button>
         <button type="button" class="btn-reference"><i class="fab fa-gitlab"></i>Gitlab</button>
       </div>
+      <button @click="$_toggle" type="button" class="btn-hide-code">
+        <i v-if="hide_code" class="far fa-code"></i>
+        <i v-else class="far fa-times"></i>
+      </button>      
     </header>
     <div class="contents">
       <section class="group">
@@ -30,7 +34,8 @@
         <div class="row" v-for="row in showMenu" :key="row.componentName">
           <div class="row-example">
             <!-- <component :is="row.component"/> -->
-            <v-runtime-template :template="row.sourceCode"  ></v-runtime-template>
+            <component v-if="row.component !== undefined " :is="row.component" />
+            <v-runtime-template v-else :template="row.sourceCode"  ></v-runtime-template>
           </div>
           <div class="row-desc">
             <gt-panel>
@@ -70,6 +75,8 @@ export default {
   name: "page",
   data() {
     return {
+      hide_code: false,
+      page:1,
       prevName:'',
       discusName:'',
       componentName:'',
@@ -77,7 +84,7 @@ export default {
       propsTable:'',
       template: null,
       showMenu:[],
-      exceptArr:['Toast']
+      exceptArr:['Toast_1']      
     };
   },
   watch:{
@@ -95,38 +102,24 @@ export default {
   methods: {
     $_renderFnc(){          
       this.componentName = this.$route.name;
+       this.discusName = this.$route.name.toLowerCase()    
 
       this.$_getReadme(readme => {
         console.log(readme)
         let doc_txt = this.$_srDocsRun(readme) 
         let menu = eval(doc_txt.basic)
         this.propsTable = doc_txt['props']
-        
+        console.log(menu)
         menu.forEach(element => {
-          element.sourceCode = doc_txt[`${element.componentName}:sourceCode`];
+          if(this.exceptArr.indexOf(element.componentName) !== -1 ){
+            element.component  = () => import(`@/assets/gtris-markdown/${element.componentName}.vue`)
+          }else{
+            element.sourceCode = doc_txt[`${element.componentName}:sourceCode`];
+          }           
           element.prismEditor = doc_txt[`${element.componentName}:prismEditor`];                  
         });
         this.showMenu = menu;
       });
-
-      // this.discusName = this.$route.name.toLowerCase()    
-
-      // import(`@/assets/gtris-markdown/${this.$route.name}.txt`).then((Response) => {
-      //   let doc_txt = this.$_srDocsRun(Response.default) 
-      //   let menu = eval(doc_txt.basic)
-      //   this.propsTable = doc_txt['props']
-        
-      //   menu.forEach(element => {
-      //     element.sourceCode = doc_txt[`${element.componentName}:sourceCode`];
-      //     if(this.exceptArr.indexOf(this.$route.name) !== -1){ 
-      //       element.component = () => import(`@/assets/gtris-markdown/${element.componentName}.vue`)
-      //     }else{
-      //       element.component = () => import(`@/assets/gtris-markdown/${element.componentName}.md`)
-      //     }          
-      //   });
-      //   this.showMenu = menu;
-      //   this.prevName = this.$route.name
-      // })
     },
     $_getReadme(resolve, reject) {
       axios.get(
@@ -153,6 +146,9 @@ export default {
       window.alert(data);
       this.$_closeModal(name);
     },
+    $_toggle() {
+      this.hide_code = !this.hide_code;
+    },    
     $_srDocsRun(readme) {
       let matches = readme.match(/\<\!\-\-split.*?\-\-\>/g); // eslint-disable-line
       let splitedReadme = readme.split(/\<\!\-\-split.*?\-\-\>/); // eslint-disable-line
@@ -185,7 +181,7 @@ export default {
         returnTxt = marked(txt);
       }      
       return returnTxt
-    }        
+    }    
   }
 };
 </script>
