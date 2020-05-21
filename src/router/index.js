@@ -43,14 +43,6 @@ const routes = [
         }
       },
       {
-        path: "pagination",
-        name: "Pagination",
-        component: () => import("../components/Pagination.vue"),
-        meta: {
-          title: "Gtris v3 Component-Pagination"
-        }
-      },
-      {
         path: "infinitescroll",
         name: "InfiniteScroll",
         component: () => import("../components/InfiniteScroll.vue"),
@@ -91,14 +83,22 @@ const routes = [
           title: "Gtris v3 Form-Input"
         }
       },      
-      // {
-      //   path: "toast",
-      //   name: "Toast",
-      //   component: () => import("../components/GtrisDoc.vue"),
-      //   meta: {
-      //     title: "Gtris v3 Component-Toast"
-      //   }
-      // },
+      {
+        path: "toast",
+        name: "Toast",
+        component: () => import("../components/GtrisDoc.vue"),
+        meta: {
+          title: "Gtris v3 Component-Toast"
+        }
+      },
+      {
+        path: "pagination",
+        name: "Pagination",
+        component: () => import("../components/GtrisDoc.vue"),
+        meta: {
+          title: "Gtris v3 Component-Pagination"
+        }
+      },
       //! 마크다운 적용 end
 
       {
