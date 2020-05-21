@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="top">
+    <div class="top" >
       <h1>GTRIS</h1>
       <div class="select-wrapper">
         <select
@@ -31,11 +31,11 @@
         :key="`menu-item-${menuIndex}`"
       >
         <router-link
-          :to="`/${versionItems[currentVersion].name}/${menuItem.id}`"
+          :to="`/${versionItems[currentVersion].name}/component/${menuItem.title}`"
           >{{ menuItem.title }}</router-link
         >
       </div>
-      <div class="folder-name">Components</div>
+      <!-- <div class="folder-name">Components</div>
       <div class="menu-item"><router-link to="/">(Badge)</router-link></div>
       <div class="menu-item"><router-link to="/">Collapse</router-link></div>
       <div class="menu-item"><router-link to="/">(Loading)</router-link></div>
@@ -52,7 +52,7 @@
       <div class="folder-name">Directive</div>
       <div class="menu-item">
         <router-link to="/">InfiniteScroll</router-link>
-      </div>
+      </div> -->
     </div>
   </nav>
 </template>

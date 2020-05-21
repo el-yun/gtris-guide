@@ -4,7 +4,26 @@ import Component from "../views/Component.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
+const capitalize = s => {
+  if (typeof s !== "string") return "";
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+
+let templatedPage = [];
+['tooltip','button','input','toast','pagination'].forEach(element => {
+  templatedPage.push(
+    {
+      path: element ,
+      name: capitalize(element),
+      component: () => import("../components/GtrisDoc.vue"),
+      meta: {
+        title: "Gtris v3 Component-"+capitalize(element)
+      }
+    }
+  )
+});
+
+let routes = [
   {
     path: "/",
     name: "Home",
@@ -20,7 +39,7 @@ const routes = [
     ]
   },
   {
-    path: "/component",
+    path: "/:version/component",
     name: "component",
     component: Component,
     mata: {
@@ -58,49 +77,6 @@ const routes = [
           title: "Gtris v3 Component-Pagination-Scroll"
         }
       },
-      //! 마크다운 적용 start
-      {
-        path: "tooltip",
-        name: "Tooltip",
-        component: () => import("../components/GtrisDoc.vue"),
-        meta: {
-          title: "Gtris v3 Component-Tooltip"
-        }
-      },
-      {
-        path: "button",
-        name: "Button",
-        component: () => import("../components/GtrisDoc.vue"),
-        meta: {
-          title: "Gtris v3 Form-button"
-        }
-      },
-      {
-        path: "input",
-        name: "Input",
-        component: () => import("../components/GtrisDoc.vue"),
-        meta: {
-          title: "Gtris v3 Form-Input"
-        }
-      },      
-      {
-        path: "toast",
-        name: "Toast",
-        component: () => import("../components/GtrisDoc.vue"),
-        meta: {
-          title: "Gtris v3 Component-Toast"
-        }
-      },
-      {
-        path: "pagination",
-        name: "Pagination",
-        component: () => import("../components/GtrisDoc.vue"),
-        meta: {
-          title: "Gtris v3 Component-Pagination"
-        }
-      },
-      //! 마크다운 적용 end
-
       {
         path: "modal",
         name: "Modal",
@@ -112,6 +88,9 @@ const routes = [
     ]
   }
 ];
+
+routes[1].children = routes[1].children.concat(templatedPage)
+
 
 const router = new VueRouter({
   mode: "history",
