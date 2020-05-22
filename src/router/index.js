@@ -54,14 +54,6 @@ let routes = [
         }
       },
       {
-        path: "collapse",
-        name: "Collapse",
-        component: () => import("../components/Collapse.vue"),
-        meta: {
-          title: "Gtris v3 Component-Collapse"
-        }
-      },
-      {
         path: "infinitescroll",
         name: "InfiniteScroll",
         component: () => import("../components/InfiniteScroll.vue"),

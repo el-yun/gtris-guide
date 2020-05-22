@@ -138,6 +138,12 @@ export default {
           reject();
       });
     },    
+    onCollapseOpend(payload) {
+      alert(`opened: ${payload}`);
+    },
+    onCollapseClosed(payload) {
+      alert(`closed: ${payload}`);
+    },
     $_openModal(name) {
       this.$eventHub.$emit(`gt::opened::modal-${name}`, name); 
     },
