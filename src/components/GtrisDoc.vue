@@ -6,14 +6,16 @@
         <p class="page-desc">{{componentName}} user guide</p>
       </div>
       <div class="header-btns">
-        <a href="/"></a>
-        <button type="button" class="btn-reference"><i class="fas fa-drafting-compass"></i>Zeplin</button>
-        <button type="button" class="btn-reference"><i class="fab fa-gitlab"></i>Gitlab</button>
+        <div>
+          <a href="/"></a>
+          <button type="button" class="btn-reference"><i class="fas fa-drafting-compass"></i>Zeplin</button>
+          <button type="button" class="btn-reference"><i class="fab fa-gitlab"></i>Gitlab</button>
+        </div>
+        <button @click="$_toggle" type="button" class="btn-hide-code">
+          <i v-if="hide_code" class="far fa-code"></i>
+          <i v-else class="far fa-times"></i>
+        </button>
       </div>
-      <button @click="$_toggle" type="button" class="btn-hide-code">
-        <i v-if="hide_code" class="far fa-code"></i>
-        <i v-else class="far fa-times"></i>
-      </button>      
     </header>
     <div class="contents">
       <section class="group">
