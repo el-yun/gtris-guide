@@ -20,19 +20,6 @@
     <div class="contents">
       <section class="group">
         <h3 class="group-title">Usage</h3>
-        <div class="row">
-          <div class="row-example">
-            <div class="comments">
-              <vue-disqus
-                shortname="gtris3"
-                :identifier="discusName"
-                :url="`http://fe.gabia.com/gtris3/component/${discusName}`"
-                title="Gtris Modal"
-              ></vue-disqus>
-            </div>
-          </div>
-          <div class="row-desc"></div>
-        </div>
         <div class="row" v-for="row in showMenu" :key="row.componentName">
           <div class="row-example">
             <!-- <component :is="row.component"/> -->
