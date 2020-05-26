@@ -10,7 +10,7 @@ const capitalize = s => {
 };
 
 let templatedPage = [];
-['tooltip','button','input','toast','pagination'].forEach(element => {
+['tooltip','button','input','toast','pagination','collapse', 'modal'].forEach(element => {
   templatedPage.push(
     {
       path: element ,
@@ -34,7 +34,7 @@ let routes = [
     children: [
       {
         path: "",
-        component: () => import("../components/Page.vue")
+        component: () => import("../views/Guide.vue")
       },
     ]
   },
@@ -54,14 +54,6 @@ let routes = [
         }
       },
       {
-        path: "collapse",
-        name: "Collapse",
-        component: () => import("../components/Collapse.vue"),
-        meta: {
-          title: "Gtris v3 Component-Collapse"
-        }
-      },
-      {
         path: "infinitescroll",
         name: "InfiniteScroll",
         component: () => import("../components/InfiniteScroll.vue"),
@@ -75,14 +67,6 @@ let routes = [
         component: () => import("../components/InfiniteScrollPreview.vue"),
         meta: {
           title: "Gtris v3 Component-Pagination-Scroll"
-        }
-      },
-      {
-        path: "modal",
-        name: "Modal",
-        component: () => import("../components/Modal.vue"),
-        meta: {
-          title: "Gtris v3 Form-Modal"
         }
       }
     ]

@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="top" >
-      <h1>GTRIS</h1>
+      <h1><router-link to="/">GTRIS</router-link></h1>
       <div class="select-wrapper">
         <select
           class="version"
@@ -35,24 +35,6 @@
           >{{ menuItem.title }}</router-link
         >
       </div>
-      <!-- <div class="folder-name">Components</div>
-      <div class="menu-item"><router-link to="/">(Badge)</router-link></div>
-      <div class="menu-item"><router-link to="/">Collapse</router-link></div>
-      <div class="menu-item"><router-link to="/">(Loading)</router-link></div>
-      <div class="menu-item"><router-link to="/">Modal</router-link></div>
-      <div class="menu-item"><router-link to="/component/pagination">Pagination</router-link></div>
-      <div class="menu-item"><router-link to="/component/toast">Toast</router-link></div>
-      <div class="menu-item"><router-link to="/component/tooltip">Tooltip</router-link></div>
-      <div class="folder-name">Forms</div>
-      <div class="menu-item"><router-link to="/component/button">Button</router-link></div>
-      <div class="menu-item"><router-link to="/component/input">Input</router-link></div>
-      <div class="menu-item"><router-link to="/">Checkbox</router-link></div>
-      <div class="menu-item"><router-link to="/">Radio</router-link></div>
-      <div class="menu-item"><router-link to="/">Dropdown</router-link></div>
-      <div class="folder-name">Directive</div>
-      <div class="menu-item">
-        <router-link to="/">InfiniteScroll</router-link>
-      </div> -->
     </div>
   </nav>
 </template>
@@ -96,7 +78,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 40px $rightSpace 20px $leftSpace;
-    h1 {
+    h1 > a {
       font-size: 30px;
       font-weight: normal;
     }

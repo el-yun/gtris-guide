@@ -6,31 +6,20 @@
         <p class="page-desc">{{componentName}} user guide</p>
       </div>
       <div class="header-btns">
-        <a href="/"></a>
-        <button type="button" class="btn-reference"><i class="fas fa-drafting-compass"></i>Zeplin</button>
-        <button type="button" class="btn-reference"><i class="fab fa-gitlab"></i>Gitlab</button>
+        <div>
+          <a href="/"></a>
+          <button type="button" class="btn-reference"><i class="fas fa-drafting-compass"></i>Zeplin</button>
+          <button type="button" class="btn-reference"><i class="fab fa-gitlab"></i>Gitlab</button>
+        </div>
+        <button @click="$_toggle" type="button" class="btn-hide-code">
+          <i v-if="hide_code" class="far fa-code"></i>
+          <i v-else class="far fa-times"></i>
+        </button>
       </div>
-      <button @click="$_toggle" type="button" class="btn-hide-code">
-        <i v-if="hide_code" class="far fa-code"></i>
-        <i v-else class="far fa-times"></i>
-      </button>      
     </header>
     <div class="contents">
       <section class="group">
         <h3 class="group-title">Usage</h3>
-        <div class="row">
-          <div class="row-example">
-            <div class="comments">
-              <vue-disqus
-                shortname="gtris3"
-                :identifier="discusName"
-                :url="`http://fe.gabia.com/gtris3/component/${discusName}`"
-                title="Gtris Modal"
-              ></vue-disqus>
-            </div>
-          </div>
-          <div class="row-desc"></div>
-        </div>
         <div class="row" v-for="row in showMenu" :key="row.componentName">
           <div class="row-example">
             <!-- <component :is="row.component"/> -->
@@ -136,6 +125,12 @@ export default {
           reject();
       });
     },    
+    onCollapseOpend(payload) {
+      alert(`opened: ${payload}`);
+    },
+    onCollapseClosed(payload) {
+      alert(`closed: ${payload}`);
+    },
     $_openModal(name) {
       this.$eventHub.$emit(`gt::opened::modal-${name}`, name); 
     },
