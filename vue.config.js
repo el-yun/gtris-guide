@@ -1,8 +1,22 @@
 "use strict";
-
+const path = require("path");
 
 module.exports = {
-  publicPath: "/gtris3/",
+  outputDir: path.resolve(__dirname, "./docs"),
+  pages: {
+    gtris3: {
+      entry: "src/main.js",
+      template: "public/index.html",
+      filename: "index.html",
+      publicPath: "/gtris3/"
+    },
+    github: {
+      entry: "src/main.js",
+      template: "public/index.html",
+      filename: "../index.html",
+      publicPath: ""
+    }
+  },
   runtimeCompiler: true,
   configureWebpack: {},
   // chainWebpack: config => {
@@ -11,27 +25,29 @@ module.exports = {
   //     .use('raw-loader')
   //     .loader('raw-loader')
   //     .end()
-  // },   
+  // },
 
   chainWebpack: config => {
-    const mdRule = config.module.rule('md')
-    mdRule.test(/\.md/)
-    .use('vue-loader')
-    .loader('vue-loader')
-    .end()
-    .use('vue-markdown-loader')
-    .loader('vue-markdown-loader/lib/markdown-compiler')
-    .options({
-      raw: true
-    })
+    const mdRule = config.module.rule("md");
+    mdRule
+      .test(/\.md/)
+      .use("vue-loader")
+      .loader("vue-loader")
+      .end()
+      .use("vue-markdown-loader")
+      .loader("vue-markdown-loader/lib/markdown-compiler")
+      .options({
+        raw: true
+      });
 
-    const txtRule = config.module.rule('txt')
-    txtRule.rule('txt')
-    .test(/\.txt/)
-    .use('raw-loader')
-    .loader('raw-loader')
-    .end()
-  },   
+    const txtRule = config.module.rule("txt");
+    txtRule
+      .rule("txt")
+      .test(/\.txt/)
+      .use("raw-loader")
+      .loader("raw-loader")
+      .end();
+  },
   css: {
     loaderOptions: {
       scss: {
