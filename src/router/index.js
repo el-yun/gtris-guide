@@ -10,7 +10,7 @@ const capitalize = s => {
 };
 
 let templatedPage = [];
-['tooltip','button','input','toast','pagination','collapse'].forEach(element => {
+['tooltip','button','input','toast','pagination'].forEach(element => {
   templatedPage.push(
     {
       path: element ,
@@ -51,6 +51,14 @@ let routes = [
         component: () => import("../components/Page.vue"),
         meta: {
           title: "Gtris v3 Component-button"
+        }
+      },
+      {
+        path: "collapse",
+        name: "Collapse",
+        component: () => import("../components/Collapse.vue"),
+        meta: {
+          title: "Gtris v3 Component-Collapse"
         }
       },
       {

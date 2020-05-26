@@ -181,13 +181,7 @@ export default {
         returnTxt = marked(txt);
       }      
       return returnTxt
-    },
-    onOpend(payload) {
-      alert(`opened: ${payload}`);
-    },
-    onClosed(payload) {
-      alert(`closed: ${payload}`);
-    }        
+    }    
   }
 };
 </script>
