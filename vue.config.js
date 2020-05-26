@@ -1,22 +1,7 @@
 "use strict";
-const path = require("path");
 
 module.exports = {
-  outputDir: path.resolve(__dirname, "./docs"),
-  pages: {
-    gtris3: {
-      entry: "src/main.js",
-      template: "public/index.html",
-      filename: "index.html",
-      publicPath: "/gtris3/"
-    },
-    github: {
-      entry: "src/main.js",
-      template: "public/index.html",
-      filename: "../index.html",
-      publicPath: ""
-    }
-  },
+  publicPath: "/gtris3/",
   runtimeCompiler: true,
   configureWebpack: {},
   // chainWebpack: config => {
